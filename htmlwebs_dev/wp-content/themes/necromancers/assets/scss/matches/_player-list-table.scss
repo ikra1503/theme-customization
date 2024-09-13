@@ -1,0 +1,155 @@
+//- Player List Table
+//- ----------------------------------------------
+
+.ncr-player-list-table {
+  margin-bottom: 0;
+  font-weight: $font-weight-bold;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: $light;
+  border: none;
+
+  thead {
+    tr {
+      th {
+        border: none;
+      }
+    }
+  }
+
+  tfoot {
+    tr {
+      td {
+        border: none;
+      }
+    }
+  }
+
+  thead th,
+  tbody td {
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-left: none;
+    border-right: none;
+
+    &:first-child {
+      padding-left: 14px;
+
+      @include media-breakpoint-up(md) {
+        padding-left: 24px;
+      }
+    }
+
+    &:nth-child(2) {
+      padding-left: 20px;
+
+      @include media-breakpoint-up(md) {
+        padding-left: 10px;
+      }
+    }
+
+    &.data-name,
+    &.data-team {
+      text-align: left;
+    }
+
+    &:last-child {
+      padding-right: 14px;
+
+      @include media-breakpoint-up(md) {
+        padding-right: 24px;
+      }
+    }
+  }
+
+  thead th {
+    padding: 2px 10px 11px;
+    border: none;
+
+    @media (min-width: $xxl-breakpoint) {
+      padding-bottom: 22px;
+    }
+  }
+
+  tbody {
+    td {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      font-size: 0.75rem;
+
+      @media (min-width: $xxl-breakpoint) {
+        font-size: 1.125rem;
+      }
+
+      &.data-name {
+        .player-flag {
+          flex-shrink: 0;
+          display: inline-flex;
+          align-items: center;
+        }
+      }
+
+      &.has-photo,
+      &.has-flag {
+        > a {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5em;
+        }
+      }
+
+      .player-photo {
+        position: relative;
+        overflow: hidden;
+
+        img {
+          display: block;
+          position: absolute;
+          left: 50%;
+          top: 0;
+          transform: translateX(-50%);
+          max-width: none !important;
+          max-height: none !important;
+          width: 170% !important;
+          height: auto !important;
+        }
+      }
+    }
+  }
+
+  tbody {
+    & > tr:first-child td {
+      border-top: none;
+    }
+
+    tr {
+      &:nth-child(odd) {
+        background-color: $dark;
+      }
+
+      &:nth-child(even) {
+        background-color: $black;
+      }
+    }
+
+    td {
+      vertical-align: middle;
+      border-color: alpha($secondary, 0.2);
+      border-left: 0;
+      border-right: 0;
+
+      &.data-article {
+        .dashicons {
+          padding-right: 0;
+          margin-right: 0.25em;
+          vertical-align: middle;
+          line-height: 1em;
+          position: relative;
+          top: -1px;
+        }
+      }
+    }
+  }
+}

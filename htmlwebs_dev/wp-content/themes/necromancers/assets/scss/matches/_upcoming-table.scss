@@ -1,0 +1,123 @@
+//- Upcoming Table
+//- ----------------------------------------------
+
+.upcoming-table {
+  font-size: 1.125rem;
+
+  @media (min-width: $xxl-breakpoint) {
+    font-size: 1.75rem;
+  }
+
+  tbody {
+    td {
+      padding: 22px 14px;
+
+      @include media-breakpoint-up(sm) {
+        padding: 29px 0 27px 24px;
+      }
+
+      @media (min-width: $xxl-breakpoint) {
+        padding-top: 36px;
+        padding-bottom: 34px;
+      }
+    }
+  }
+
+  &__label {
+    display: block;
+    margin-top: 6px;
+    font-size: .75rem;
+    color: $secondary;
+
+    @media (min-width: $xxl-breakpoint) {
+      margin-top: 5px;
+      font-size: 1.25rem;
+    }
+  }
+
+  &__team {
+
+    &-vs {
+      margin: 0 20px;
+
+      @media (min-width: $xxl-breakpoint) {
+        margin: 0 30px;
+      }
+    }
+  }
+
+  &__tickets,
+  td.data-date span {
+    color: $primary;
+  }
+
+  td.data-date {
+    font-size: .875rem;
+
+    @media (min-width: $xxl-breakpoint) {
+      font-size: 1.75rem;
+    }
+
+    span {
+      display: block;
+      font-size: 1.75rem;
+      line-height: .75;
+
+      @media (min-width: $xxl-breakpoint) {
+        margin-bottom: -1px;
+        font-size: 3.25rem;
+      }
+    }
+  }
+
+  &__tickets {
+    &:hover {
+      color: $light;
+    }
+
+    &.disable {
+      color: $secondary;
+    }
+  }
+
+  // Links
+  td.data-time,
+  td.data-results {
+
+    a {
+      color: $light;
+
+      &:hover {
+        color: $link-hover-color;
+      }
+    }
+  }
+
+  td.data-teams {
+
+    // Teams format
+    .match-teams-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .match-team:first-child {
+
+      .match-team__desc {
+        order: 0;
+        text-align: right;
+      }
+      .match-team-logo {
+        order: 1;
+        margin-right: 0;
+        margin-left: 12px;
+
+        @media (min-width: $xxl-breakpoint) {
+          margin-right: 0;
+          margin-left: 14px;
+        }
+      }
+    }
+  }
+}

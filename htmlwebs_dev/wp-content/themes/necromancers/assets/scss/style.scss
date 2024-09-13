@@ -1,0 +1,176 @@
+/*
+File Name:    style.css
+Written by:   Dan Fisher - (http://bit.ly/dan_fisher)
+Description:  General styling for template (including Header, Footer, Sidebar)
+*/
+
+/* Table of Content
+==================================================
+
+	#Imports
+
+	#Content
+
+	#Components
+		- Accordion
+		- Buttons
+		- Countdown
+		- Counter
+		- Custom Select
+		- Fields
+		- Filter Menu
+		- Forms
+		- Icons
+		- Info Box
+		- Lightbox
+		- Logo
+		- Map
+		- Menus
+		- Misc
+		- Overlay
+		- Page Heading
+		- Partner
+		- Social Menus
+		- Sprites
+		- Staff Member
+		- Stream
+
+	#Modules
+		- Header Actions
+		- Menu Panel
+		- Cart Panel
+		- Search Panel
+
+		- Widget Areas
+		- Widget Default
+		- Widget Posts Carousel
+
+	#Base
+		- Header
+		- Header Navigation
+		- Header Search
+		- Page Header
+		- Content
+		- Footer
+		- 404 Error Page
+		- Misc
+		- Helpers
+		- Preloader
+		- Partners
+
+
+
+	#Widgets
+		- Widgets common styles
+		- Widget Schedule
+		- Widget Social Links
+		- Widget Categories
+		- Widget Posts
+		- Widgets Tags
+		- Widget Instagram
+		- Widget Archive
+
+	#Blog
+		- Post
+		- Pagination
+		- Post Author
+		- Post Comments
+		- Post Grid
+*/
+
+// Basic Imports
+@import 'config/imports';
+
+// Content
+@import 'content/type';
+@import 'content/section';
+
+// Components
+@import 'components/alert'; // duplicated
+// @import "components/accordion";
+// @import "components/buttons";
+@import 'components/countdown';
+// @import "components/counter";
+@import 'components/counter-player';
+@import 'components/custom-select';
+@import 'components/decorations';
+@import 'components/dlmenu';
+@import 'components/fields';
+@import 'components/filter-menu';
+@import 'components/forms';
+@import 'components/icons';
+@import 'components/info-box'; // duplicated
+@import 'components/lightbox'; // duplicated
+@import 'components/logo';
+@import 'components/map';
+@import 'components/menus';
+@import 'components/misc';
+@import 'components/overlay';
+@import 'components/page-heading';
+@import 'components/partner';
+@import 'components/social-menus';
+@import 'components/sprites';
+@import 'components/staff-member';
+@import 'components/stream';
+@import 'components/tables';
+// @import "components/world-map";
+
+// Modules
+@import 'modules/header-actions';
+@import 'modules/menu-panel';
+@import 'modules/search-panel';
+@import 'modules/widget-areas';
+@import 'modules/widget-default';
+@import 'modules/widget-loop';
+@import 'modules/widget-carousel';
+@import 'modules/widget-partners-carousel';
+@import 'modules/widget-player-carousel';
+@import 'modules/widget-posts-carousel';
+
+// Base
+@import 'base/root';
+@import 'base/backgrounds';
+@import 'base/cursor';
+@import 'base/grid';
+@import 'base/header';
+@import 'base/pages';
+@import 'base/preloader';
+@import 'base/404';
+@import 'base/footer';
+
+// Blog
+@import 'blog/wp-common';
+@import 'blog/blog-classic';
+@import 'blog/post';
+@import 'blog/post-sharing';
+@import 'blog/comments';
+
+// Matches
+@import 'matches/match-carousel';
+@import 'matches/match-overview';
+@import 'matches/match-replay';
+@import 'matches/match-result';
+@import 'matches/match-score';
+@import 'matches/match-stats-links';
+@import 'matches/match-player';
+@import 'matches/match-stats-progress';
+@import 'matches/match-stats-tabs';
+@import 'matches/match-stats-widget-table';
+@import 'matches/match-stats-widget-tabs';
+@import 'matches/match-stats-widgets';
+@import 'matches/match-team';
+@import 'matches/matches-filter';
+@import 'matches/matches-table';
+@import 'matches/lineups-table';
+@import 'matches/upcoming-table';
+@import 'matches/standings-table';
+@import 'matches/player-list-table';
+
+// Teams
+@import 'teams/team-carousel';
+@import 'teams/team-player';
+@import 'teams/player-info';
+// @import "teams/team-selection";
+
+// SportsPress
+@import 'sportspress/sportspress';

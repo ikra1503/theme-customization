@@ -1,0 +1,296 @@
+//- Match Stats Widgets
+//- ----------------------------------------------
+
+.match-stats {
+
+  &-container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include media-breakpoint-up(lg) {
+      display: flex;
+      justify-content: center;
+      max-width: 728px;
+    }
+  
+    @media (min-width: 1200px) {
+      max-width: 990px;
+    }
+  
+    @media (min-width: $xxl-breakpoint) {
+      max-width: 1168px;
+    }
+  }
+
+  &-widget {
+    font-size: .75rem;
+    font-weight: $font-weight-bold;
+    line-height: 1;
+    letter-spacing: -.03em;
+    text-transform: uppercase;
+    color: $light;
+
+    @media (min-width: $xxl-breakpoint) {
+      font-size: 1.125rem;
+    }
+
+    [class*="col"] + [class*="col"] & {
+      @include media-breakpoint-down(md) {
+        margin-top: 30px;
+      }
+    }
+
+    &__header {
+      font-size: .875rem;
+      letter-spacing: -.06em;
+      margin-bottom: .75em;
+
+      @media (min-width: $xxl-breakpoint) {
+        font-size: 1.25rem;
+      }
+    }
+
+    &__item,
+    &__body {
+      @include list-unstyled;
+      width: 100%;
+      margin-bottom: 0;
+
+      > li {
+        padding: 1.6em 2em 1.45em; // 19px 24px 17px
+
+        vertical-align: middle;
+        border-color: alpha($secondary, 0.2);
+
+        &.match-stats-progress-item--padding-sm {
+          padding-top: 1.3em;
+          padding-bottom: 1.5em;
+        }
+
+        &.match-stats-progress-item--padding-lg {
+          padding-top: 1.66em;
+          padding-bottom: 1.66em;
+        }
+
+        &.match-stats-widget__score {
+          padding-top: 20px;
+          padding-bottom: 21px;
+        }
+
+        & + li {
+          border-top-width: 1px;
+          border-top-style: solid;
+        }
+
+        &:first-child {
+          border-top: none;
+        }
+
+        &:nth-child(odd) {
+          background-color: $dark;
+        }
+
+        &:nth-child(even) {
+          background-color: $black;
+        }
+
+        & > span:last-child {
+          text-align: right;
+
+          & > span {
+            display: block;
+            font-size: .625rem;
+          }
+        }
+      }
+    }
+
+    li {
+      position: relative;
+
+      &.match-team-item {
+        --team-color: var(--color-primary);
+
+        &::before {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 2px;
+          height: 100%;
+          content: "";
+          background-color: var(--team-color, var(--color-primary));
+        }
+
+        .sp-event-stars {
+
+          .sp-event-star {
+            width: auto;
+            height: auto;
+            font-size: 14px;
+            line-height: 1.2em;
+          }
+        }
+      }
+    }
+
+    // Widget General
+    &__body {
+      .match-stats-widget--general & {
+
+        > li {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .match-team + .match-team {
+
+            .match-team-logo {
+              order: 2;
+              margin-right: 0;
+              margin-left: 12px;
+            }
+            
+            figcaption {
+              text-align: right;
+            }
+          }
+
+          .match-team-list {
+
+            li {
+
+              img {
+                width: 14px;
+                height: 18px;
+                margin-right: 2px;
+                object-fit: cover;
+
+                @media (min-width: $xxl-breakpoint) {
+                  width: 20px;
+                  height: 27px;
+                }
+              }
+
+              &:last-child {
+
+                img {
+                  margin-right: 0;
+                }
+              }
+            }
+          }
+
+        }
+
+        > li {
+          & > span:first-child {
+            color: $secondary;
+          }
+        }
+      }
+    }
+
+    &--general {
+      .match-team:last-child {
+        text-align: right;
+      }
+    }
+
+    // Widget Leaders
+    &__item {
+      .match-stats-widget--leaders & {
+        > li {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          &:first-child {
+            padding-left: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+          }
+
+          & > span:first-child {
+            color: $secondary;
+          }
+        }
+
+        & + * {
+          margin-top: 14px;
+        }
+      }
+    }
+
+    // Widget Matchup
+    &__body {
+      .match-stats-widget--matchup & {
+      }
+    }
+
+    &__achievements {
+      display: flex;
+      justify-content: space-between;
+
+      .match-stats-widget & {
+        padding-top: 22px;
+        padding-bottom: 20px;
+      }
+
+      ul {
+        @include list-unstyled;
+
+        li {
+          display: inline-block;
+        }
+
+        img {
+          margin-top: -2px;
+        }
+
+        &:first-child {
+          li + li {
+            margin-left: 8px;
+          }
+
+          img {
+            margin-right: 6px;
+          }
+        }
+
+        &:last-child {
+          li,
+          img {
+            float: right;
+          }
+
+          li + li {
+            margin-right: 8px;
+          }
+
+          img {
+            margin-left: 6px;
+          }
+        }
+      }
+    }
+
+    &__details {
+      ul {
+        @include list-unstyled;
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+
+        svg {
+          display: block;
+          width: 20px;
+          height: 20px;
+          margin-top: 1px;
+          margin-bottom: 11px;
+          fill: $light;
+        }
+      }
+    }
+  }
+}

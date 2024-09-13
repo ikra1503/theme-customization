@@ -1,0 +1,265 @@
+//- Comments
+//- ----------------------------------------------
+
+.post-comments {
+
+  &__title {
+    margin-bottom: 75px;
+
+    @media (min-width: $xxl-breakpoint) {
+      margin-bottom: 93px;
+    }
+  }
+
+  .post + &,
+  .page + & {
+    margin-top: 90px;
+
+    @media (min-width: $xxl-breakpoint) {
+      margin-top: 105px;
+    }
+  }
+}
+
+.comments,
+.commentlist,
+.comments .children {
+  @include list-unstyled;
+}
+
+.comments,
+.commentlist {
+
+  .comment-respond {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .children {
+    margin-bottom: 50px;
+    padding-left: 28px;
+
+    .children .children .children {
+      padding-left: 0;
+    }
+  }
+
+  // Comment (trackback, pingback)
+  .comment,
+  .trackback,
+  .pingback,
+  .review {
+
+    .comment__avatar {
+      float: left;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .comment__avatar + .comment__body {
+      padding-left: 24px;
+
+      @media (min-width: $xxl-breakpoint) {
+        padding-left: 40px;
+      }
+    }
+
+    .comment__body {
+      overflow: hidden;
+
+      p {
+        margin-bottom: 14px;
+      }
+
+      img {
+        margin-bottom: $spacer;
+      }
+    }
+
+    .comment__author {
+      margin-bottom: 13px;
+      font-size: .875rem;
+
+      @media (min-width: $xxl-breakpoint) {
+        margin-bottom: 19px;
+        font-size: 1.25rem;
+      }
+    }
+
+    .comment__meta {
+      & > * {
+        display: inline-block;
+
+        & + * {
+          margin-left: 20px;
+
+          @media (min-width: $xxl-breakpoint) {
+            margin-left: 36px;
+          }
+        }
+      }
+    }
+
+    .comment__date,
+    .comment-edit-link,
+    .comment__reply a {
+      font-size: .6875rem;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -.03em;
+      text-transform: uppercase;
+      color: $headings-color;
+
+      @media (min-width: $xxl-breakpoint) {
+        font-size: .875rem;
+      }
+
+      &:hover {
+        color: $secondary;
+      }
+    }
+
+    .comment__reply a {
+      color: $success;
+      transition: color 300ms ease;
+
+      &:hover {
+        color: $body-color;
+      }
+    }
+
+    &.bypostauthor {
+
+      .comment__author-badge {
+        background-color: $primary;
+        border-radius: 0;
+        margin-left: 0.35em;
+        font-size: .75rem;
+        color: $body-color;
+
+        @media (min-width: $xxl-breakpoint) {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  .children .comment,
+  .children .trackback,
+  .children .pingback {
+    margin-top: 50px;
+
+    @media (min-width: $xxl-breakpoint) {
+      margin-top: 70px;
+    }
+  }
+
+  .comment + .comment,
+  .comment + .trackback,
+  .comment + .pingback,
+  .trackback + .trackback,
+  .trackback + .comment,
+  .trackback + .pingback,
+  .pingback + .pingback,
+  .pingback + .comment,
+  .pingback + .trackback {
+    margin-top: 50px;
+
+    @media (min-width: $xxl-breakpoint) {
+      margin-top: 70px;
+    }
+  }
+}
+
+// Post Comments Form
+.post-comments-form {
+  margin-top: 90px;
+
+  @media (min-width: $xxl-breakpoint) {
+    margin-top: 105px;
+  }
+
+  &__title {
+    margin-bottom: 68px;
+
+    @media (min-width: $xxl-breakpoint) {
+      margin-bottom: 82px;
+    }
+
+    small {
+      display: inline-block;
+      letter-spacing: 0.05em;
+      font-size: $font-size-xxs;
+      color: $danger;
+      margin-left: 0.5em;
+    }
+
+    .comment-respond & {
+      margin-bottom: 34px;
+
+      @media (min-width: $xxl-breakpoint) {
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  .comment-form-cookies-consent {
+    float: left;
+    margin: 1rem 0;
+  }
+}
+
+.comment-form {
+
+  .logged-in-as {
+
+    a {
+      font-weight: bold;
+    }
+  }
+}
+
+// Reviews
+.comment_container {
+  display: flex;
+  align-items: flex-start;
+
+  .avatar {
+    margin-right: 24px;
+  }
+
+  .comment-text {
+    flex: 1;
+
+    .description {
+      p:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .meta {
+      font-size: .75rem;
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: -0.03em;
+      color: $headings-color;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1em;
+
+      .woocommerce-review__dash {
+        display: none;
+      }
+
+      .woocommerce-review__published-date {
+        color: $info;
+      }
+    }
+  }
+}
+
+.commentlist {
+  margin-bottom: 90px;
+}

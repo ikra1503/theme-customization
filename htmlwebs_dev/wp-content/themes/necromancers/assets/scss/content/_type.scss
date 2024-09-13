@@ -1,0 +1,631 @@
+//
+// Headings
+//
+
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-normal;
+  line-height: 1.71428571;
+  color: $body-color;
+
+  @media (min-width: $xxl-breakpoint) {
+    font-size: $font-size-lg;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  margin-bottom: $headings-margin-bottom;
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  line-height: $headings-line-height;
+  text-transform: uppercase;
+  color: $headings-color;
+
+  .bg--type-dark & {
+    color: $headings-color-on-dark;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5 {
+  letter-spacing: -0.06em;
+}
+
+h1,
+.h1 {
+  @include media-breakpoint-up(lg) {
+    font-size: $h1-font-size;
+  }
+
+  @include media-breakpoint-down(sm) {
+    .site-layout--landing & {
+      font-size: calc($h1-font-size * 0.37);
+    }
+  }
+
+  @media (min-width: $xxl-breakpoint) {
+    .site-layout--landing & {
+      font-size: calc($h1-font-size * 1.216);
+    }
+  }
+}
+
+h2,
+.h2 {
+  @include media-breakpoint-up(lg) {
+    font-size: $h2-font-size;
+  }
+}
+
+h3,
+.h3 {
+  font-size: $h3-font-size;
+
+  @include media-breakpoint-up(lg) {
+    font-size: $h3-font-size;
+  }
+
+  @media (min-width: $xxl-breakpoint) {
+    font-size: calc($h3-font-size * 1.4);
+  }
+}
+
+h4,
+.h4 {
+  // font-size: $h4-font-size / 1.33;
+  font-size: $h4-font-size;
+  letter-spacing: -0.03em;
+
+  @include media-breakpoint-up(lg) {
+    font-size: $h4-font-size;
+  }
+
+  @media (min-width: $xxl-breakpoint) {
+    font-size: calc($h4-font-size * 1.4375);
+  }
+
+  &.text-sm {
+    font-size: calc($h4-font-size / 1.45);
+
+    @include media-breakpoint-up(lg) {
+      font-size: calc($h4-font-size / 1.23);
+    }
+
+    @media (min-width: $xxl-breakpoint) {
+      font-size: calc($h4-font-size / 1.14);
+    }
+  }
+}
+
+h5,
+.h5 {
+  // font-size: $h5-font-size / 1.22;
+  font-size: $h5-font-size;
+  line-height: 1;
+
+  @include media-breakpoint-up(lg) {
+    font-size: $h5-font-size;
+  }
+
+  @media (min-width: $xxl-breakpoint) {
+    font-size: calc($h5-font-size * 1.27);
+  }
+}
+
+h6,
+.h6 {
+  font-size: $h6-font-size;
+  line-height: 1;
+  letter-spacing: -0.03em;
+
+  @media (min-width: $xxl-breakpoint) {
+    font-size: calc($h6-font-size * 1.33);
+  }
+
+  &.text-sm {
+    font-size: $h6-font-size / 1.3;
+    line-height: 1.65;
+
+    @media (min-width: $xxl-breakpoint) {
+      font-size: $h6-font-size;
+    }
+  }
+}
+
+.lead {
+  font-size: $lead-font-size;
+  font-weight: $lead-font-weight;
+}
+
+.h-lead-1 {
+  font-size: calc($h-lead1-font-size * 0.4);
+
+  @include media-breakpoint-up(sm) {
+    font-size: calc($h-lead1-font-size * 0.75);
+  }
+
+  @include media-breakpoint-up(lg) {
+    font-size: $h-lead1-font-size;
+  }
+
+  @include media-breakpoint-down(sm) {
+    .site-layout--landing & {
+      font-size: calc($h-lead1-font-size * 0.37);
+    }
+  }
+
+  @media (min-width: $xxl-breakpoint) {
+    .site-layout--landing & {
+      font-size: calc($h-lead1-font-size * 1.216);
+    }
+  }
+}
+
+.h-lead-2 {
+  @include media-breakpoint-up(lg) {
+    font-size: $h-lead2-font-size;
+  }
+}
+
+.subtitle {
+  h1 & {
+    display: block;
+    margin-bottom: 0.43em;
+    font-size: 1.25rem;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    color: $primary;
+
+    &.subtitle--warning {
+      color: #f7ff2a;
+    }
+    &.subtitle--danger {
+      color: $danger;
+    }
+
+    @include media-breakpoint-up(sm) {
+      font-size: 1.5rem;
+    }
+
+    @include media-breakpoint-down(sm) {
+      .site-layout--landing & {
+        font-size: 1rem;
+      }
+    }
+
+    @include media-breakpoint-up(lg) {
+      font-size: 1.875rem;
+    }
+
+    @media (min-width: $xxl-breakpoint) {
+      .site-layout--landing & {
+        font-size: 2.625rem;
+      }
+    }
+  }
+}
+
+//
+// Horizontal rules
+//
+
+hr {
+  margin-top: 1.375rem;
+  margin-bottom: 1.375rem;
+  border: 0;
+  border-top: $hr-border-width solid $hr-border-color;
+}
+.hr--lg {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.hr--xl {
+  margin-top: 4.5rem;
+  margin-bottom: 4.5rem;
+}
+
+//
+// Emphasis
+//
+
+small,
+.small {
+  font-size: $small-font-size;
+  font-weight: inherit;
+}
+
+mark,
+.mark {
+  padding: $mark-padding;
+  background-color: $mark-bg;
+}
+
+a {
+  color: $link-color;
+  text-decoration: $link-decoration;
+  transition: 300ms all ease;
+
+  &:hover {
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
+  }
+}
+
+//
+// Text Colors
+//
+.color {
+  &-warning {
+    color: $warning;
+  }
+}
+
+//
+// Lists
+//
+
+.list-unstyled {
+  @include list-unstyled;
+}
+
+// Inline turns list items into inline-block
+.list-inline {
+  @include list-unstyled;
+}
+
+.list-inline-item {
+  display: inline-block;
+
+  &:not(:last-child) {
+    margin-right: $list-inline-padding;
+  }
+}
+
+.post__body ol:not([class]),
+.comment__body ol:not([class]),
+.page-content ol:not([class]),
+.staff-member__content ol:not([class]),
+.wp-block-column ol,
+.ncr-ol-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 1.5em;
+
+  li {
+    position: relative;
+    padding: 0 0 0.5em 0;
+
+    &::before {
+      display: inline-block; /* block would also work */
+      font-size: 1em;
+      color: $success;
+      margin-right: 0.8125em;
+    }
+
+    ol,
+    ul {
+      padding-top: 0.5em;
+      margin-bottom: 0;
+      margin-left: 1.375em;
+
+      li:last-child {
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+
+.comment__body ul:not([class]),
+.post__body ul:not([class]),
+.page-content ul:not([class]),
+.staff-member__content ul:not([class]),
+.wp-block-column ul,
+.ncr-ul-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 1.5em;
+
+  li {
+    position: relative;
+    padding: 0 0 0.5em 1.875em;
+
+    &::before {
+      display: inline-block; /* block would also work */
+      position: absolute; /* move this out of the way of the text */
+      left: 0; /* move the counter label into the space from the padding */
+      width: 20px;
+      font-size: 1em;
+      color: $success;
+    }
+
+    ol,
+    ul {
+      padding-top: 0.5em;
+      margin-bottom: 0;
+
+      li:last-child {
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+
+.post__body ol:not([class]),
+.comment__body ol:not([class]),
+.page-content ol:not([class]),
+.staff-member__content ol:not([class]),
+.wp-block-column ol,
+.ncr-ol-list {
+  li {
+    &::before {
+      counter-increment: item;
+      content: counters(item, '.') '. ';
+      font-weight: $font-weight-bold;
+    }
+
+    ul {
+      li {
+        &:first-child {
+          counter-reset: item;
+        }
+
+        ol {
+          margin-left: 0;
+
+          li {
+            &:first-child {
+              counter-reset: subitem;
+            }
+
+            &::before {
+              counter-increment: subitem;
+              content: counter(subitem) '. ';
+            }
+          }
+        }
+      }
+
+      ul {
+        margin-left: 0;
+      }
+    }
+  }
+
+  // needed for sublists
+  li:first-child {
+    counter-reset: item;
+  }
+}
+
+.post__body ul:not([class]),
+.comment__body ul:not([class]),
+.page-content ul:not([class]),
+.staff-member__content ul:not([class]),
+.wp-block-column ul,
+.ncr-ul-list {
+  li {
+    &::before {
+      font-family: 'Font Awesome 5 Free';
+      font-weight: $font-weight-base;
+      content: '\f00c';
+      font-weight: 700;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    ol {
+      > li {
+        padding-left: 0;
+
+        &:first-child {
+          counter-reset: item;
+        }
+
+        &::before {
+          font-family: $font-family-base;
+          counter-increment: item;
+          content: counters(item, '.') '. ';
+          font-weight: $font-weight-bold;
+          position: static;
+          width: auto;
+        }
+      }
+    }
+  }
+}
+
+//
+// Misc
+//
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+
+.font-bold {
+  font-weight: $font-weight-bold;
+}
+
+// Builds on `abbr`
+.initialism {
+  font-size: 90%;
+  text-transform: uppercase;
+}
+
+// Blockquotes
+.blockquote {
+  margin-bottom: $spacer;
+  font-size: $blockquote-font-size;
+}
+
+.blockquote-footer {
+  display: block;
+  font-size: 80%; // back to default font-size
+  color: $blockquote-small-color;
+
+  &::before {
+    content: '\2014 \00A0'; // em dash, nbsp
+  }
+}
+blockquote {
+  position: relative;
+  padding-left: 1em;
+
+  &::before {
+    content: '“';
+    display: block;
+    position: absolute;
+    left: 0;
+    font-size: $blockquote-font-size;
+    line-height: 1.2em;
+  }
+
+  p {
+    font-size: $blockquote-font-size;
+  }
+
+  cite {
+  }
+
+  a {
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+dl {
+  margin-bottom: $spacer * 1.375;
+}
+
+.page-content {
+  * + .social-menu {
+    margin-top: 28px;
+
+    @media (min-width: $xxl-breakpoint) {
+      margin-top: 32px;
+    }
+  }
+
+  h4 + p {
+    margin-top: 27px;
+
+    @media (min-width: $xxl-breakpoint) {
+      margin-top: 46px;
+    }
+  }
+
+  h4 + form {
+    margin-top: 66px;
+
+    @media (min-width: $xxl-breakpoint) {
+      margin-top: 85px;
+    }
+  }
+
+  .social-menu + h4.text-sm {
+    margin-top: 59px;
+
+    @media (min-width: $xxl-breakpoint) {
+      margin-top: 98px;
+    }
+  }
+}
+
+.contact-us-page {
+}
+
+.spacer,
+.spacer-lg {
+  display: block;
+
+  & + h4 {
+    margin-top: 0;
+  }
+}
+
+.spacer {
+  height: 30px;
+
+  @include media-breakpoint-up(md) {
+    height: 57px;
+  }
+
+  @media (min-width: $xxl-breakpoint) {
+    height: 76px;
+  }
+
+  p + & {
+    margin-top: -24px;
+  }
+
+  h4 + & {
+    margin-top: -32px;
+  }
+}
+
+.spacer-lg {
+  height: 60px;
+
+  @include media-breakpoint-up(md) {
+    height: 90px;
+  }
+
+  @media (min-width: $xxl-breakpoint) {
+    height: 107px;
+  }
+}
+
+.color-primary {
+  color: $primary !important;
+}
+
+.color-warning {
+  color: $warning !important;
+}
+
+.color-success {
+  color: $success !important;
+}
+
+.color-danger {
+  color: $danger !important;
+}
+
+.color-gold {
+  color: #ffdf0b;
+}
+
+.color-silver {
+  color: #c3e0fc;
+}
+
+.color-bronze {
+  color: #f88052;
+}

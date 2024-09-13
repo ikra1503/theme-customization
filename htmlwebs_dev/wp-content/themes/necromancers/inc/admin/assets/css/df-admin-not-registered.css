@@ -1,0 +1,33 @@
+.welcome-panel-column-container .welcome-panel-column:first-child {
+  display: none !important; }
+
+.necromancers-is-not-activated .theme-browser .themes .theme[data-slug="necromancers"] .notice {
+  display: none !important; }
+
+.necromancers-is-not-activated .theme-overlay .theme-author + .notice {
+  display: none !important; }
+
+[data-type="acf/world-map"],
+[data-type="acf/video-popup"],
+[data-type="acf/team-gallery"],
+[data-type="acf/social-links"],
+[data-type="acf/icon"],
+[data-type="acf/heading-lead"],
+[data-type="acf/description-list"],
+[data-type="acf/counter"],
+[data-type="acf/button"],
+[data-type="acf/alert"],
+[data-type="acf/accordion"],
+.editor-block-list-item-acf-accordion,
+.editor-block-list-item-acf-world-map,
+.editor-block-list-item-acf-video-popup,
+.editor-block-list-item-acf-team-gallery,
+.editor-block-list-item-acf-social-links,
+.editor-block-list-item-acf-icon,
+.editor-block-list-item-acf-heading-lead,
+.editor-block-list-item-acf-description-list,
+.editor-block-list-item-acf-counter,
+.editor-block-list-item-acf-button,
+.editor-block-list-item-acf-alert {
+  pointer-events: none !important;
+  opacity: 0.5 !important; }

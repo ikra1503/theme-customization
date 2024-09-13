@@ -1,0 +1,287 @@
+//- Social Menu: Landing
+//- ----------------------------------------------
+
+.social-menu--landing {
+  @include list-unstyled;
+  display: inline-block;
+  margin: -1.125rem 0 0;
+
+  @include media-breakpoint-up(lg) {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  @include media-breakpoint-down(sm) {
+    text-align: left;
+  }
+
+  .site-layout--landing & {
+    opacity: 1;
+    transition: 0.7s 0.6s all cubic-bezier(0.86, 0, 0.07, 1);
+  }
+
+  .preloader-is--active .site-layout--landing & {
+    opacity: 0;
+    transform: translateY(-50%) scale(1.5);
+  }
+
+  li {
+    display: inline-block;
+    margin: 1.125rem 3rem;
+
+    @include media-breakpoint-down(sm) {
+      display: block;
+      margin: 2.25rem 0;
+    }
+
+    @include media-breakpoint-up(md) {
+      margin-left: 1.5rem;
+      margin-right: 1.5rem;
+    }
+
+    @include media-breakpoint-up(xl) {
+      margin-left: 3rem;
+      margin-right: 3rem;
+    }
+
+    a {
+      position: relative;
+      display: block;
+      padding-left: 2.875rem;
+      font-size: 1.625rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      text-transform: uppercase;
+      text-align: left;
+      text-decoration: none;
+      color: $body-color;
+
+      .bg--type-dark & {
+        color: $light;
+      }
+
+      &:before {
+        display: none;
+      }
+
+      i {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-size: 2.25rem;
+        font-weight: 400;
+        color: $primary;
+      }
+    }
+  }
+
+  .link-subtitle {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  .social-menu__icon {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-style: normal;
+    font-weight: 400;
+    will-change: transform;
+
+    &::before {
+      content: fa-content($fa-var-globe);
+      font-style: normal;
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 400;
+    }
+  }
+
+  // Email
+  .social-menu__link[href*='mailto:'] .social-menu__icon::before {
+    content: fa-content($fa-var-at);
+    font-weight: 700;
+  }
+}
+
+// Glitch effect on hover
+.social-menu--landing-glitch {
+  .glitch-layer {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .glitch-layer--1 {
+    color: #f0f;
+    z-index: -2;
+    opacity: 0.8;
+  }
+  .glitch-layer--2 {
+    color: #0ff;
+    z-index: -1;
+    opacity: 0.8;
+  }
+
+  li {
+    a {
+      transform: translate3d(0, 0, 0);
+
+      &:hover {
+        .glitch-layer--1 {
+          animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+        }
+        .glitch-layer--2 {
+          animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+        }
+      }
+    }
+  }
+}
+
+.social-menu--landing {
+  .social-menu__link[href*='discordapp.com'] .social-menu__icon::before,
+  .social-menu__link[href*='discord.com'] .social-menu__icon::before,
+  .social-menu__link[href*='discord.gg'] .social-menu__icon::before {
+    font-family: 'Font Awesome 5 Brands';
+    content: fa-content($fa-var-discord);
+  }
+
+  .social-menu__link[href*='dribbble.com'] .social-menu__icon::before {
+    content: fa-content($fa-var-dribbble);
+    font-family: 'Font Awesome 5 Brands';
+  }
+  .social-menu__link[href*='facebook.com'] .social-menu__icon::before {
+    content: fa-content($fa-var-facebook);
+    font-family: 'Font Awesome 5 Brands';
+  }
+  .social-menu__link[href*='instagram.com'] .social-menu__icon::before {
+    content: fa-content($fa-var-instagram);
+    font-family: 'Font Awesome 5 Brands';
+  }
+  .social-menu__link[href*='itch.io'] .social-menu__icon::before {
+    content: fa-content($fa-var-itch-io);
+    font-family: 'Font Awesome 5 Brands';
+  }
+  .social-menu__link[href*='linkedin.com'] .social-menu__icon::before {
+    content: fa-content($fa-var-linkedin);
+    font-family: 'Font Awesome 5 Brands';
+  }
+  .social-menu__link[href*='medium.com'] .social-menu__icon::before {
+    content: fa-content($fa-var-medium);
+    font-family: 'Font Awesome 5 Brands';
+  }
+  .social-menu__link[href*='mixer.com'] .social-menu__icon::before {
+    content: fa-content($fa-var-mixer);
+    font-family: 'Font Awesome 5 Brands';
+  }
+  .social-menu__link[href*='ok.ru'] .social-menu__icon::before {
+    content: fa-content($fa-var-odnoklassniki);
+    font-family: 'Font Awesome 5 Brands';
+  }
+  .social-menu__link[href*='pinterest.'] .social-menu__icon::before {
+    content: fa-content($fa-var-pinterest);
+    font-family: 'Font Awesome 5 Brands';
+  }
+  .social-menu__link[href*='quora.com'] .social-menu__icon::before {
+    content: fa-content($fa-var-quora);
+    font-family: 'Font Awesome 5 Brands';
+  }
+  .social-menu__link[href*='reddit.com'] .social-menu__icon::before {
+    content: fa-content($fa-var-reddit-alien);
+    font-family: 'Font Awesome 5 Brands';
+  }
+  .social-menu__link[href*='skype.com'] .social-menu__icon::before {
+    content: fa-content($fa-var-skype);
+    font-family: 'Font Awesome 5 Brands';
+  }
+  .social-menu__link[href*='snapchat.com'] .social-menu__icon::before {
+    content: fa-content($fa-var-snapchat-ghost);
+    font-family: 'Font Awesome 5 Brands';
+  }
+  .social-menu__link[href*='soundcloud.com'] .social-menu__icon::before {
+    content: fa-content($fa-var-soundcloud);
+    font-family: 'Font Awesome 5 Brands';
+  }
+  .social-menu__link[href*='steampowered.com'] .social-menu__icon::before,
+  .social-menu__link[href*='steamcommunity.com'] .social-menu__icon::before {
+    content: fa-content($fa-var-steam);
+    font-family: 'Font Awesome 5 Brands';
+  }
+  .social-menu__link[href*='t.me'] .social-menu__icon::before {
+    content: fa-content($fa-var-telegram-plane);
+    font-family: 'Font Awesome 5 Brands';
+  }
+  .social-menu__link[href*='tiktok.com'] .social-menu__icon::before {
+    content: fa-content($fa-var-tiktok);
+    font-family: 'Font Awesome 5 Brands';
+  }
+  .social-menu__link[href*='ts3server:'] .social-menu__icon::before {
+    content: fa-content($fa-var-teamspeak);
+    font-family: 'Font Awesome 5 Brands';
+  }
+  .social-menu__link[href*='tumblr.com'] .social-menu__icon::before {
+    content: fa-content($fa-var-tumblr);
+    font-family: 'Font Awesome 5 Brands';
+  }
+  .social-menu__link[href*='twitter.com'] .social-menu__icon::before {
+    content: fa-content($fa-var-twitter);
+    font-family: 'Font Awesome 5 Brands';
+  }
+  .social-menu__link[href*='twitch.tv'] .social-menu__icon::before {
+    content: fa-content($fa-var-twitch);
+    font-family: 'Font Awesome 5 Brands';
+  }
+  .social-menu__link[href*='vimeo.com'] .social-menu__icon::before {
+    content: fa-content($fa-var-vimeo);
+    font-family: 'Font Awesome 5 Brands';
+  }
+  .social-menu__link[href*='vk.com'] .social-menu__icon::before {
+    content: fa-content($fa-var-vk);
+    font-family: 'Font Awesome 5 Brands';
+  }
+  .social-menu__link[href*='wechat.com'] .social-menu__icon::before,
+  .social-menu__link[href*='wx.qq.com'] .social-menu__icon::before {
+    content: fa-content($fa-var-weixin);
+    font-family: 'Font Awesome 5 Brands';
+  }
+  .social-menu__link[href*='weibo.com'] .social-menu__icon::before {
+    content: fa-content($fa-var-weibo);
+    font-family: 'Font Awesome 5 Brands';
+  }
+  .social-menu__link[href*='whatsapp.com'] .social-menu__icon::before,
+  .social-menu__link[href*='wa.me'] .social-menu__icon::before {
+    content: fa-content($fa-var-whatsapp);
+    font-family: 'Font Awesome 5 Brands';
+  }
+  .social-menu__link[href*='xing.com'] .social-menu__icon::before {
+    content: fa-content($fa-var-xing);
+    font-family: 'Font Awesome 5 Brands';
+  }
+  .social-menu__link[href*='youtube.com'] .social-menu__icon::before {
+    content: fa-content($fa-var-youtube);
+    font-family: 'Font Awesome 5 Brands';
+  }
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-3px, 3px);
+  }
+  40% {
+    transform: translate(-3px, -3px);
+  }
+  60% {
+    transform: translate(3px, 3px);
+  }
+  80% {
+    transform: translate(3px, -3px);
+  }
+  to {
+    transform: translate(0);
+  }
+}

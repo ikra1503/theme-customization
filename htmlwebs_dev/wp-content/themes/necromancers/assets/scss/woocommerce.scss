@@ -1,0 +1,47 @@
+/*
+File Name:    woocommerce.css
+Written by:   Dan Fisher - (http://bit.ly/dan_fisher)
+Description:  WooCommerce styling for the theme
+*/
+
+/* Table of Content
+==================================================
+
+  #Imports
+
+  #Shop
+    - Account
+    - Checkout
+    - Shop
+    - Featured Product
+*/
+
+// Bootstrap essentials
+@import "../vendor/bootstrap/scss/functions";
+@import "../vendor/bootstrap/scss/variables";
+@import "../vendor/bootstrap/scss/mixins";
+
+// Template Mixins
+@import "./config/mixins";
+
+// Template Functions
+@import "./config/functions";
+
+// Template Variables
+@import "./config/variables";
+
+// Fontawesome
+@import "../../vendor/fontawesome/scss/variables";
+@import "../../vendor/fontawesome/scss/mixins";
+@import "../../vendor/fontawesome/scss/core";
+@import "../../vendor/fontawesome/scss/brands";
+
+// Shop
+@import 'shop/login-register';
+@import 'shop/account';
+@import 'shop/checkout';
+@import 'shop/cart';
+@import 'shop/shop';
+@import 'shop/product';
+@import 'shop/modules/widget-featured-product';
+@import 'shop/modules/cart-panel';

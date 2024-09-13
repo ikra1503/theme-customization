@@ -1,0 +1,203 @@
+//- Login Register
+//- ----------------------------------------------
+
+.site-content {
+
+  // Login Page
+  &.login-page {
+    text-align: center;
+
+    h2 {
+      width: 100%;
+      text-align: center;
+
+      @media (min-width: 1440px) {
+        max-width: 320px;
+      }
+
+      @media (min-width: $xxl-breakpoint) {
+        max-width: 440px;
+      }
+    }
+
+    .row {
+      min-height: calc(100vh - #{$header-height-desktop-mobile});
+
+      @media (min-width: $xxl-breakpoint) {
+        min-height: calc(100vh - #{$header-height-desktop});
+      }
+    }
+
+    .row > * {
+      padding: 48px 34px;
+
+      @media (min-width: 1440px) {
+        display: flex;
+        flex-direction: column;
+        min-height: calc(100vh - #{$header-height-desktop-mobile});
+      }
+
+      @media (min-width: $xxl-breakpoint) {
+        min-height: calc(100vh - #{$header-height-desktop});
+      }
+    }
+
+    .row > *:nth-child(odd) {
+      background-color: $light;
+
+      @media (min-width: 1440px) {
+        padding-block: 78px;
+
+        & > * {
+          margin-inline: auto;
+        }
+      }
+    }
+
+    .ncr-login-form-registration-enabled > *:nth-child(odd) {
+      @media (min-width: 1440px) {
+        padding-inline: 50px 180px;
+
+        & > * {
+          margin-inline-end: 0;
+        }
+      }
+
+      @media (min-width: $xxl-breakpoint) {
+        padding-inline-end: 260px;
+      }
+    }
+
+    .row > *:nth-child(even) {
+      background-color: $lighter;
+
+      @media (min-width: 1440px) {
+        padding: 78px 50px 78px 180px;
+
+        & > * {
+          margin-right: auto;
+        }
+      }
+
+      @media (min-width: $xxl-breakpoint) {
+        padding-left: 260px;
+      }
+    }
+  }
+}
+
+
+// Login Form
+
+.login-form,
+.register-form {
+  width: 100%;
+  max-width: 320px;
+
+  @media (max-width: 1439px) {
+    margin: 0 auto;
+  }
+
+  @media (min-width: $xxl-breakpoint) {
+    max-width: 440px;
+  }
+
+  &__info,
+  .woocommerce-privacy-policy-text {
+    display: inline-block;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 22px;
+    font-size: .75rem;
+    font-weight: $font-weight-bold;
+    line-height: 1.167;
+    letter-spacing: -.03em;
+    text-transform: uppercase;
+
+    @media (min-width: $xxl-breakpoint) {
+      margin-top: 36px;
+      margin-bottom: 25px;
+      font-size: 1.125rem;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .form__title + & {
+    margin-top: 38px;
+
+    @include media-breakpoint-up(md) {
+      margin-top: 66px;
+    }
+  }
+}
+
+.login-form {
+  &__button,
+  &__twitter-button,
+  &__facebook-button {
+    color: $light;
+
+    &:hover {
+      color: $light;
+    }
+  }
+
+  &__info {
+    @media (min-width: $xxl-breakpoint) {
+      margin-top: 56px;
+    }
+  }
+
+  &__button {
+    background-color: $body-color;
+
+    @media (min-width: $xxl-breakpoint) {
+      margin-top: 5px;
+    }
+
+    &:hover {
+      background-color: lightness($body-color, 1.1);
+    }
+
+    .login-form & {
+      margin-top: 0;
+    }
+  }
+
+  &__twitter-button {
+    background-color: #09aafe;
+
+    &:hover {
+      background-color: lighten(#09aafe, 10%);
+    }
+  }
+
+  &__facebook-button {
+    background-color: #224bc0;
+
+    &:hover {
+      background-color: lighten(#224bc0, 10%);
+    }
+  }
+
+  .password-reminder {
+    font-weight: $font-weight-bold;
+    letter-spacing: -.03em;
+    text-transform: uppercase;
+
+    @media (min-width: $xxl-breakpoint) {
+      margin-top: 7px;
+    }
+
+    a {
+      color: $info;
+
+      &:hover {
+        color: $body-color;
+      }
+    }
+  }
+}

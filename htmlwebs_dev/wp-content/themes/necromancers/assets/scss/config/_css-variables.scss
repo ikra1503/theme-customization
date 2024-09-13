@@ -1,0 +1,64 @@
+//- CSS variables
+//- ----------------------------------------------
+:root {
+  // fonts
+  --font-base: 'Rajdhani';
+  --font-size-base: 1rem;
+
+  // heading sizes
+  --h-lead1-font-size: 6.375rem; // 102px
+  --h-lead2-font-size: 4.5rem; // 72px
+  --h1-font-size: 3.875rem; // 62px
+  --h2-font-size: 2.875rem; // 46px
+  --h3-font-size: 2rem; // 32px
+  --h4-font-size: 1.5rem; // 24px
+  --h5-font-size: 1.125rem; // 18px
+  --h6-font-size: 1rem; // 16px
+
+  // colors
+  @include defineColorHSL(--color-body-bg, 0, 0%, 100%); // #fff
+  @include defineColorHSL(--color-body, 231, 17%, 16%); // #222430
+  @include defineColorHSL(--color-body-dark, 232, 46%, 85%); // #c6cbea
+  @include defineColorHSL(--color-tiny, 233, 15%, 43%); // #5e627e
+
+  @include defineColorHSL(--color-primary, 83, 100%, 54%); // #a3ff12
+  @include defineColorHSL(--color-secondary, 233, 15%, 43%); // #5e627e
+  @include defineColorHSL(--color-tertiary, 231, 17%, 16%); // #222430
+  @include defineColorHSL(--color-quaternary, 233, 16%, 29%); // #3d4055
+  @include defineColorHSL(--color-success, 83, 100%, 44%); // #88df00
+  @include defineColorHSL(--color-info, 230, 14%, 83%); // #ced0da
+  @include defineColorHSL(--color-warning, 48, 100%, 50%); // #ffcc00
+  @include defineColorHSL(--color-danger, 343, 100%, 55%); // #ff1c5c
+  @include defineColorHSL(--color-light, 0, 0%, 100%); // #fff
+  @include defineColorHSL(--color-lighter, 220, 23%, 97%); // #f7f8fa
+  @include defineColorHSL(--color-dark, 229, 21%, 10%); // #151720
+
+  @include defineColorHSL(--color-black, 229, 22%, 10%); // #13151e
+  @include defineColorHSL(--color-white, 0, 0%, 100%); // #fff
+
+  @include defineColorHSL(--color-preloader-bg, 231, 17%, 16%); // #222430
+
+  // landing details
+  @include defineColorHSL(--color-landing-detail-primary, 96, 100%, 50%); // #68ff01
+  @include defineColorHSL(--color-landing-detail-secondary, 76, 100%, 61%); // #ccff3a
+
+  // decor
+
+  // default color
+  @include defineColorHSL(--color-decor-page-layer-1-gradient-start, 83, 100%, 37%); // #73bb00
+  @include defineColorHSL(--color-decor-page-layer-1-gradient-stop, 83, 100%, 9%); // #1d3000
+
+  @include defineColorHSL(--color-decor-page-layer-2-gradient-start, 85, 87%, 42%); // #a0e700
+  @include defineColorHSL(--color-decor-page-layer-2-gradient-stop, 105, 100%, 31%); // #29a000
+
+  @include defineColorHSL(--color-decor-page-layer-3-gradient-start, 64, 100%, 49%); // #e7f800
+  @include defineColorHSL(--color-decor-page-layer-3-gradient-stop, 109, 100%, 37%); // #24bd00
+
+  @include defineColorHSL(--color-decor-page-line, 64, 100%, 61%); // #f3ff38
+
+  // Preloader
+  @include defineColorHSL(--color-preloader-bg, 229, 21%, 10%); // #151720
+  @include defineColorHSL(--color-preloader-base, 233, 15%, 43%); // #5e627e
+  @include defineColorHSL(--color-preloader-highlight, 0, 0%, 100%); // #fff
+  @include defineColorHSL(--color-preloader-accent, 83, 100%, 54%); // #a3ff12
+}

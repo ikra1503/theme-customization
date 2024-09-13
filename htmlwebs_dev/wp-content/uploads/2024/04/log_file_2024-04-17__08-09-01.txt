@@ -1,0 +1,46 @@
+
+---Downloaded files---
+The import files for: Default were successfully downloaded!
+Initial max execution time = 3000
+Files info:
+Site URL = http://64.4.160.99/htmlwebs_dev
+Data file = /home/admin/web/64.4.160.99/public_html/htmlwebs_dev/wp-content/themes/necromancers/inc/demo/content.xml
+Widget file = /home/admin/web/64.4.160.99/public_html/htmlwebs_dev/wp-content/themes/necromancers/inc/demo/widgets.json
+Customizer file = /home/admin/web/64.4.160.99/public_html/htmlwebs_dev/wp-content/themes/necromancers/inc/demo/customizer.dat
+Redux files:
+not defined!
+
+------
+New AJAX call!
+
+
+------
+New AJAX call!
+
+
+------
+New AJAX call!
+
+
+------
+New AJAX call!
+
+
+------
+New AJAX call!
+
+
+---Importing widgets---
+Sidebar : 
+
+NCR - Posts - Latest Posts - Imported
+NCR - Posts - Recent Posts - Imported
+NCR - Recent Comments - Recent Comments - Imported
+
+
+
+---Importing customizer settings---
+Error: The customizer import file is not in a correct format. Please make sure to use the correct customizer import file.
+
+---ocdi/after_import---
+

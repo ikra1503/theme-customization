@@ -1,0 +1,743 @@
+//- Social Menu
+//- ----------------------------------------------
+
+.social-menu {
+  @include list-unstyled;
+
+  li {
+    display: inline-block;
+
+    .partner &,
+    .staff-member & {
+      display: block;
+      padding: 0;
+      font-size: 0.625rem;
+
+      @include media-breakpoint-up(lg) {
+        @include fluid-value(font-size, 10);
+      }
+
+      @media (min-width: $xxl-breakpoint) {
+        @include fluid-value(font-size, 14);
+      }
+    }
+
+    a {
+      .partner &,
+      .staff-member & {
+        @include media-breakpoint-up(lg) {
+          @include fluid-value(width, 40);
+          @include fluid-value(height, 40);
+          @include fluid-value(line-height, 40);
+        }
+      }
+    }
+  }
+
+  a::before {
+    @extend %fa-icon;
+    @extend .fab;
+  }
+
+  .partner &,
+  .staff-member & {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+  }
+
+  .single-sp_staff .staff-member & {
+    margin: -40px -24px 0 0;
+
+    @include media-breakpoint-up(lg) {
+      margin-right: -112px;
+      margin-top: -68px;
+    }
+
+    @media (min-width: 1440px) {
+      margin-right: -108px;
+    }
+
+    @media (min-width: 1920px) {
+      margin-right: -120px;
+    }
+  }
+}
+
+//- Social Menu: Header
+//- ----------------------------------------------
+
+.social-menu {
+  &--header {
+    display: block;
+    width: 260px;
+    margin: 0;
+    float: left;
+    position: absolute;
+    left: -124px;
+    z-index: 99999;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column-reverse;
+    opacity: 0;
+
+    @media (min-width: $xxl-breakpoint) {
+      width: 365px;
+      left: -165px;
+    }
+
+    .site-header--top & {
+      top: $header-height-desktop-mobile;
+      transform: translateY(-10px);
+
+      @media (min-width: $xxl-breakpoint) {
+        top: $header-height-desktop;
+      }
+    }
+
+    .site-header--bottom & {
+      bottom: 100%;
+      transform: translateY(10px);
+    }
+
+    li {
+      .site-header--top & {
+        border-top: 2px solid transparent;
+
+        @media (min-width: $xxl-breakpoint) {
+          border-top-width: 4px;
+        }
+      }
+
+      .site-header--bottom & {
+        border-bottom: 2px solid transparent;
+
+        @media (min-width: $xxl-breakpoint) {
+          border-bottom-width: 4px;
+        }
+      }
+
+      a {
+        position: relative;
+        display: block;
+        padding: 23px 18px 19px;
+        color: $light;
+        background-color: $header-bg-color;
+        border-left-width: 72px;
+        border-left-style: solid;
+        font-size: 1rem;
+        font-weight: $nav-font-weight;
+        letter-spacing: -0.03em;
+        line-height: 1.25;
+        text-transform: uppercase;
+
+        @media (min-width: $xxl-breakpoint) {
+          padding: 35px 28px 32px;
+          border-left-width: 100px;
+          font-size: 1.125rem;
+        }
+
+        &:hover {
+          color: $primary;
+
+          &::before {
+            transform: translateX(-50%) translateY(-50%) scale(1.2);
+          }
+        }
+
+        &::before {
+          position: absolute;
+          inset-block-start: 50%;
+          inset-inline-start: -36px;
+          transform: translateX(-50%) translateY(-50%);
+          color: $light;
+          font-size: 1.5rem;
+          transition: transform 0.25s ease;
+
+          @media (min-width: $xxl-breakpoint) {
+            inset-inline-start: -50px;
+            font-size: 1.875rem;
+          }
+        }
+
+        .link-subtitle {
+          display: block;
+          font-size: 0.625em;
+          line-height: 1;
+          color: $tiny-color;
+        }
+      }
+    }
+  }
+
+  .header-social-toggle:hover & {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+//- Social Menu: Default
+//- ----------------------------------------------
+
+.social-menu--default {
+  margin-bottom: 0;
+
+  .player-info-detail__label + & {
+    margin-top: 1px;
+  }
+
+  .info-box + & {
+    margin-top: 20px;
+  }
+
+  li {
+    display: inline-block;
+
+    a {
+      &:before {
+        color: $primary;
+      }
+
+      .menu-panel & {
+        @media (min-width: $xxl-breakpoint) {
+          font-size: 20px;
+        }
+      }
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    & + li {
+      margin-left: 17px;
+
+      @media (min-width: $xxl-breakpoint) {
+        margin-left: 50px;
+
+        .player-info-page & {
+          margin-left: 40px;
+        }
+      }
+
+      .menu-panel & {
+        margin-left: 24px;
+
+        @media (min-width: $xxl-breakpoint) {
+          margin-left: 40px;
+        }
+      }
+    }
+  }
+}
+
+//- Social Menu: Links
+//- ----------------------------------------------
+
+.social-menu--links {
+  margin: -4px;
+
+  li {
+    padding: 4px;
+
+    a {
+      display: block;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      color: $light;
+
+      &:hover {
+        opacity: 0.75;
+      }
+    }
+  }
+}
+
+//- Social Menu: Mobile Bar
+//- ----------------------------------------------
+
+.social-menu--mobile-bar {
+  li {
+    display: block;
+
+    & + li {
+      border-top: 1px solid $nav-sub-border-color;
+    }
+  }
+
+  a {
+    display: block;
+    padding: 12px 54px 12px 34px;
+
+    &:before {
+      margin-right: 12px;
+    }
+
+    span {
+      font-size: 0.75rem;
+      font-family: $font-family-base;
+      font-weight: $font-weight-bold;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      color: $light;
+    }
+  }
+}
+
+//- Social Icons
+//- ----------------------------------------------
+
+.social-menu {
+  a::before {
+    content: fa-content($fa-var-link);
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 700;
+  }
+  a[href*='mailto:']::before {
+    content: fa-content($fa-var-at);
+  }
+
+  a[href*='discordapp.com']::before,
+  a[href*='discord.com']::before,
+  a[href*='discord.gg']::before {
+    content: fa-content($fa-var-discord);
+    font-family: 'Font Awesome 5 Brands';
+    font-weight: 400;
+  }
+  a[href*='dribbble.com']::before {
+    content: fa-content($fa-var-dribbble);
+    font-family: 'Font Awesome 5 Brands';
+    font-weight: 400;
+  }
+  a[href*='facebook.com']::before {
+    content: fa-content($fa-var-facebook);
+    font-family: 'Font Awesome 5 Brands';
+    font-weight: 400;
+  }
+  a[href*='instagram.com']::before {
+    content: fa-content($fa-var-instagram);
+    font-family: 'Font Awesome 5 Brands';
+    font-weight: 400;
+  }
+  a[href*='itch.io']::before {
+    content: fa-content($fa-var-itch-io);
+    font-family: 'Font Awesome 5 Brands';
+    font-weight: 400;
+  }
+  a[href*='linkedin.com']::before {
+    content: fa-content($fa-var-linkedin);
+    font-family: 'Font Awesome 5 Brands';
+    font-weight: 400;
+  }
+  a[href*='medium.com']::before {
+    content: fa-content($fa-var-medium);
+    font-family: 'Font Awesome 5 Brands';
+    font-weight: 400;
+  }
+  a[href*='mixer.com']::before {
+    content: fa-content($fa-var-mixer);
+    font-family: 'Font Awesome 5 Brands';
+    font-weight: 400;
+  }
+  a[href*='ok.ru']::before {
+    content: fa-content($fa-var-odnoklassniki);
+    font-family: 'Font Awesome 5 Brands';
+    font-weight: 400;
+  }
+  a[href*='pinterest.']::before {
+    content: fa-content($fa-var-pinterest);
+    font-family: 'Font Awesome 5 Brands';
+    font-weight: 400;
+  }
+  a[href*='quora.com']::before {
+    content: fa-content($fa-var-quora);
+    font-family: 'Font Awesome 5 Brands';
+    font-weight: 400;
+  }
+  a[href*='reddit.com']::before {
+    content: fa-content($fa-var-reddit-alien);
+    font-family: 'Font Awesome 5 Brands';
+    font-weight: 400;
+  }
+  a[href*='skype.com']::before {
+    content: fa-content($fa-var-skype);
+    font-family: 'Font Awesome 5 Brands';
+    font-weight: 400;
+  }
+  a[href*='snapchat.com']::before {
+    content: fa-content($fa-var-snapchat-ghost);
+    font-family: 'Font Awesome 5 Brands';
+    font-weight: 400;
+  }
+  a[href*='soundcloud.com']::before {
+    content: fa-content($fa-var-soundcloud);
+    font-family: 'Font Awesome 5 Brands';
+    font-weight: 400;
+  }
+  a[href*='steampowered.com']::before,
+  a[href*='steamcommunity.com']::before {
+    content: fa-content($fa-var-steam);
+    font-family: 'Font Awesome 5 Brands';
+    font-weight: 400;
+  }
+  a[href*='t.me']::before {
+    content: fa-content($fa-var-telegram-plane);
+    font-family: 'Font Awesome 5 Brands';
+    font-weight: 400;
+  }
+  a[href*='tiktok.com']::before {
+    content: fa-content($fa-var-tiktok);
+    font-family: 'Font Awesome 5 Brands';
+    font-weight: 400;
+  }
+  a[href*='ts3server:']::before {
+    content: fa-content($fa-var-teamspeak);
+    font-family: 'Font Awesome 5 Brands';
+    font-weight: 400;
+  }
+  a[href*='tumblr.com']::before {
+    content: fa-content($fa-var-tumblr);
+    font-family: 'Font Awesome 5 Brands';
+    font-weight: 400;
+  }
+  a[href*='twitter.com']::before {
+    content: fa-content($fa-var-twitter);
+    font-family: 'Font Awesome 5 Brands';
+    font-weight: 400;
+  }
+  a[href*='twitch.tv']::before {
+    content: fa-content($fa-var-twitch);
+    font-family: 'Font Awesome 5 Brands';
+    font-weight: 400;
+  }
+  a[href*='vimeo.com']::before {
+    content: fa-content($fa-var-vimeo);
+    font-family: 'Font Awesome 5 Brands';
+    font-weight: 400;
+  }
+  a[href*='vk.com']::before {
+    content: fa-content($fa-var-vk);
+    font-family: 'Font Awesome 5 Brands';
+    font-weight: 400;
+  }
+  a[href*='wechat.com']::before,
+  a[href*='wx.qq.com']::before {
+    content: fa-content($fa-var-weixin);
+    font-family: 'Font Awesome 5 Brands';
+    font-weight: 400;
+  }
+  a[href*='weibo.com']::before {
+    content: fa-content($fa-var-weibo);
+    font-family: 'Font Awesome 5 Brands';
+    font-weight: 400;
+  }
+  a[href*='whatsapp.com']::before,
+  a[href*='wa.me']::before {
+    content: fa-content($fa-var-whatsapp);
+    font-family: 'Font Awesome 5 Brands';
+    font-weight: 400;
+  }
+  a[href*='xing.com']::before {
+    content: fa-content($fa-var-xing);
+    font-family: 'Font Awesome 5 Brands';
+    font-weight: 400;
+  }
+  a[href*='youtube.com']::before {
+    content: fa-content($fa-var-youtube);
+    font-family: 'Font Awesome 5 Brands';
+    font-weight: 400;
+  }
+}
+
+.social-menu.social-menu--links {
+  a[href*='discordapp.com'],
+  a[href*='discord.com'],
+  a[href*='discord.gg'] {
+    background-color: $social-discordapp;
+  }
+  a[href*='dribbble.com'] {
+    background-color: $social-dribbble;
+  }
+  a[href*='facebook.com'] {
+    background-color: $social-facebook;
+  }
+  a[href*='instagram.com'] {
+    background-color: $social-instagram;
+  }
+  a[href*='itch.io'] {
+    background-color: $social-itchio;
+  }
+  a[href*='linkedin.com'] {
+    background-color: $social-linkedin;
+  }
+  a[href*='medium.com'] {
+    background-color: $social-medium;
+  }
+  a[href*='mixer.com'] {
+    background-color: $social-mixer;
+  }
+  a[href*='ok.ru'] {
+    background-color: $social-ok;
+  }
+  a[href*='pinterest.'] {
+    background-color: $social-pinterest;
+  }
+  a[href*='quora.com'] {
+    background-color: $social-quora;
+  }
+  a[href*='reddit.com'] {
+    background-color: $social-reddit;
+  }
+  a[href*='skype.com'] {
+    background-color: $social-skype;
+  }
+  a[href*='snapchat.com'] {
+    background-color: $social-snapchat;
+  }
+  a[href*='soundcloud.com'] {
+    background-color: $social-soundcloud;
+  }
+  a[href*='steampowered.com'],
+  a[href*='steamcommunity.com'] {
+    background-color: $social-steam;
+  }
+  a[href*='t.me'] {
+    background-color: $social-telegram;
+  }
+  a[href*='ts3server:'] {
+    background-color: $social-teamspeak;
+  }
+  a[href*='tiktok.com'] {
+    background-color: $social-tiktok;
+  }
+  a[href*='tumblr.com'] {
+    background-color: $social-tumblr;
+  }
+  a[href*='twitter.com'] {
+    background-color: $social-twitter;
+  }
+  a[href*='twitch.tv'] {
+    background-color: $social-twitch;
+  }
+  a[href*='vimeo.com'] {
+    background-color: $social-vimeo;
+  }
+  a[href*='vk.com'] {
+    background-color: $social-vk;
+  }
+  a[href*='wechat.com'],
+  a[href*='wx.qq.com'] {
+    background-color: $social-wechat;
+  }
+  a[href*='weibo.com'] {
+    background-color: $social-weibo;
+  }
+  a[href*='whatsapp.com'],
+  a[href*='wa.me'] {
+    background-color: $social-whatsapp;
+  }
+  a[href*='xing.com'] {
+    background-color: $social-xing;
+  }
+  a[href*='youtube.com'] {
+    background-color: $social-youtube;
+  }
+}
+
+.social-menu.social-menu--mobile-bar {
+  a[href*='discordapp.com']::before,
+  a[href*='discord.com']::before,
+  a[href*='discord.gg']::before {
+    color: $social-discordapp;
+  }
+  a[href*='dribbble.com']::before {
+    color: $social-dribbble;
+  }
+  a[href*='facebook.com']::before {
+    color: $social-facebook;
+  }
+  a[href*='instagram.com']::before {
+    color: $social-instagram;
+  }
+  a[href*='itch.io']::before {
+    color: $social-itchio;
+  }
+  a[href*='linkedin.com']::before {
+    color: $social-linkedin;
+  }
+  a[href*='medium.com']::before {
+    color: $social-medium;
+  }
+  a[href*='mixer.com']::before {
+    color: $social-mixer;
+  }
+  a[href*='ok.ru']::before {
+    color: $social-ok;
+  }
+  a[href*='pinterest.']::before {
+    color: $social-pinterest;
+  }
+  a[href*='quora.com']::before {
+    color: $social-quora;
+  }
+  a[href*='reddit.com']::before {
+    color: $social-reddit;
+  }
+  a[href*='skype.com']::before {
+    color: $social-skype;
+  }
+  a[href*='snapchat.com']::before {
+    color: $social-snapchat;
+  }
+  a[href*='soundcloud.com']::before {
+    color: $social-soundcloud;
+  }
+  a[href*='steampowered.com']::before,
+  a[href*='steamcommunity.com']::before {
+    color: $social-steam;
+  }
+  a[href*='t.me']::before {
+    color: $social-telegram;
+  }
+  a[href*='ts3server:']::before {
+    color: $social-teamspeak;
+  }
+  a[href*='tiktok.com']::before {
+    color: $social-tiktok;
+  }
+  a[href*='tumblr.com']::before {
+    color: $social-tumblr;
+  }
+  a[href*='twitter.com']::before {
+    color: $social-twitter;
+  }
+  a[href*='twitch.tv']::before {
+    color: $social-twitch;
+  }
+  a[href*='vimeo.com']::before {
+    color: $social-vimeo;
+  }
+  a[href*='vk.com']::before {
+    color: $social-vk;
+  }
+  a[href*='wechat.com']::before,
+  a[href*='wx.qq.com']::before {
+    color: $social-wechat;
+  }
+  a[href*='weibo.com']::before {
+    color: $social-weibo;
+  }
+  a[href*='whatsapp.com']::before,
+  a[href*='wa.me']::before {
+    color: $social-whatsapp;
+  }
+  a[href*='xing.com']::before {
+    color: $social-xing;
+  }
+  a[href*='youtube.com']::before {
+    color: $social-youtube;
+  }
+}
+
+.social-menu.social-menu--header {
+  a {
+    border-color: $secondary;
+  }
+  a[href*='discordapp.com'],
+  a[href*='discord.com'],
+  a[href*='discord.gg'] {
+    border-color: $social-discordapp;
+  }
+  a[href*='dribbble.com'] {
+    border-color: $social-dribbble;
+  }
+  a[href*='facebook.com'] {
+    border-color: $social-facebook;
+  }
+  a[href*='instagram.com'] {
+    border-color: $social-instagram;
+  }
+  a[href*='itch.io'] {
+    border-color: $social-itchio;
+  }
+  a[href*='linkedin.com'] {
+    border-color: $social-linkedin;
+  }
+  a[href*='medium.com'] {
+    border-color: $social-medium;
+  }
+  a[href*='mixer.com'] {
+    border-color: $social-mixer;
+  }
+  a[href*='ok.ru'] {
+    border-color: $social-ok;
+  }
+  a[href*='pinterest.'] {
+    border-color: $social-pinterest;
+  }
+  a[href*='quora.com'] {
+    border-color: $social-quora;
+  }
+  a[href*='reddit.com'] {
+    border-color: $social-reddit;
+  }
+  a[href*='skype.com'] {
+    border-color: $social-skype;
+  }
+  a[href*='snapchat.com'] {
+    border-color: $social-snapchat;
+  }
+  a[href*='soundcloud.com'] {
+    border-color: $social-soundcloud;
+  }
+  a[href*='steampowered.com'],
+  a[href*='steamcommunity.com'] {
+    border-color: $social-steam;
+  }
+  a[href*='t.me'] {
+    border-color: $social-telegram;
+  }
+  a[href*='ts3server:'] {
+    border-color: $social-teamspeak;
+  }
+  a[href*='tiktok.com'] {
+    border-color: $social-tiktok;
+  }
+  a[href*='tumblr.com'] {
+    border-color: $social-tumblr;
+  }
+  a[href*='twitter.com'] {
+    border-color: $social-twitter;
+  }
+  a[href*='twitch.tv'] {
+    border-color: $social-twitch;
+  }
+  a[href*='vimeo.com'] {
+    border-color: $social-vimeo;
+  }
+  a[href*='vk.com'] {
+    border-color: $social-vk;
+  }
+  a[href*='wechat.com'],
+  a[href*='wx.qq.com'] {
+    border-color: $social-wechat;
+  }
+  a[href*='weibo.com'] {
+    border-color: $social-weibo;
+  }
+  a[href*='whatsapp.com'],
+  a[href*='wa.me'] {
+    border-color: $social-whatsapp;
+  }
+  a[href*='xing.com'] {
+    border-color: $social-xing;
+  }
+  a[href*='youtube.com'] {
+    border-color: $social-youtube;
+  }
+}

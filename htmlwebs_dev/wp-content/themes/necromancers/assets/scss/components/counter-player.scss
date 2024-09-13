@@ -1,0 +1,30 @@
+//- Counter
+//- ----------------------------------------------
+
+.counter {
+	&__number,
+	&__label {
+
+		.widget-carousel .player__stats & {
+			color: $light;
+		}
+	}
+
+	&__number {
+
+		.widget-carousel .player__stats & {
+			@media (min-width: $xxl-breakpoint) {
+				font-size: 2.5rem;
+			}
+		}
+	}
+
+	&__label {
+
+		.widget-carousel .player__stats & {
+			@media (min-width: $xxl-breakpoint) {
+				font-size: 1.125rem;
+			}
+		}
+	}
+}

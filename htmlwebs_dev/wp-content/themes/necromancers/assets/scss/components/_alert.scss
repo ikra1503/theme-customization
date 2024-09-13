@@ -1,0 +1,123 @@
+//- Alert
+//- ----------------------------------------------
+
+.alert,
+.wpcf7 form .wpcf7-response-output,
+.woocommerce-message[role="alert"],
+.comment-notes,
+.woocommerce-error,
+.woocommerce-privacy-policy-text,
+.cart-empty.woocommerce-info {
+  position: relative;
+  padding-top: $alert-padding-y;
+  padding-bottom: $alert-padding-y;
+  padding-right: $alert-padding-x;
+  padding-left: $alert-icon-width + $alert-padding-x;
+  margin-bottom: $alert-margin-bottom;
+  margin-left: 0;
+  margin-right: 0;
+  border: $alert-border-width solid transparent;
+  @include border-radius($alert-border-radius);
+  font-weight: 700;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: $alert-icon-width;
+  }
+
+  &::after {
+    display: block;
+    position: absolute;
+    left: $alert-icon-width / 2;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 700;
+    content: "\f00c";
+    margin-left: -10px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    font-size: 10px;
+    line-height: 17px;
+    border: 2px solid transparent;
+    border-radius: 3px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  &:empty {
+    display: none;
+  }
+}
+
+.alert-success,
+.wpcf7 form.sent .wpcf7-response-output,
+.woocommerce-message[role="alert"] {
+  @include alert-variant($alert-success-bg, $alert-success-border, $alert-success-color);
+
+  &::before {
+    background-color: $alert-success-border;
+  }
+
+  &::after {
+    border-color: $alert-success-color;
+  }
+}
+
+.alert-info,
+.comment-notes,
+.woocommerce-privacy-policy-text,
+.cart-empty.woocommerce-info {
+  @include alert-variant($alert-info-bg, $alert-info-border, $alert-info-color);
+
+  &::before {
+    background-color: $alert-info-border;
+  }
+
+  &::after {
+    border-color: $alert-info-color;
+    content: "\f129";
+  }
+}
+
+.alert-warning,
+.wpcf7 form.spam .wpcf7-response-output,
+.wpcf7 form.invalid .wpcf7-response-output,
+.wpcf7 form.unaccepted .wpcf7-response-output {
+  @include alert-variant($alert-warning-bg, $alert-warning-border, $alert-warning-color);
+
+  &::before {
+    background-color: $alert-warning-border;
+  }
+
+  &::after {
+    border-color: $alert-warning-color;
+    content: "\f12a";
+  }
+}
+
+.alert-danger,
+.wpcf7 form.failed .wpcf7-response-output,
+.wpcf7 form.aborted .wpcf7-response-output,
+.woocommerce-error {
+  @include alert-variant($alert-danger-bg, $alert-danger-border, $alert-danger-color);
+
+  &::before {
+    background-color: $alert-danger-border;
+  }
+
+  &::after {
+    border-color: $alert-danger-color;
+    content: "\f00d";
+  }
+}

@@ -1,0 +1,58 @@
+//- Cart
+//- ----------------------------------------------
+
+.woocommerce-cart-form {
+  .shop_table {
+
+  }
+}
+  .woocommerce-cart-form__cart-item {
+
+    // remove
+    .product-remove {
+      padding-inline-end: 0;
+
+      > a {
+        display: inline-block;
+        padding: 0.5em 0.25em;
+        color: $danger;
+        text-decoration: none;
+        font-size: 1.5rem;
+        font-weight: bold;
+
+        &:hover {
+          color: $dark;
+        }
+      }
+    }
+
+    // thumbnail
+    .product-thumbnail {
+      width: 60px;
+      padding-inline: 0;
+
+      img {
+        width: 60px;
+        aspect-ratio: 1;
+        object-fit: cover;
+      }
+    }
+
+    // name
+    .product-name {
+      font-weight: bold;
+
+      > a {
+        color: $headings-color;
+
+        &:hover {
+          color: $link-hover-color;
+        }
+      }
+    }
+
+    // quantity
+    .product-quantity {
+      width: 60px;
+    }
+  }

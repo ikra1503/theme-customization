@@ -1,0 +1,155 @@
+//- Filter Menu
+//- ----------------------------------------------
+.filter-menu {
+  @include list-unstyled;
+  display: block;
+  position: absolute;
+  width: 50%;
+  max-width: 240px;
+  right: 2px;
+  visibility: hidden;
+  z-index: 99999;
+  opacity: 0;
+  transition: all 0s ease-in-out;
+
+  @include media-breakpoint-up(lg) {
+    max-width: none;
+    right: -198px;
+    width: auto;
+  }
+
+  @media (min-width: $xxl-breakpoint) {
+    right: -228px;
+  }
+
+  .site-header--top & {
+    top: 0;
+    transform: translateY(calc(#{$header-height-desktop-mobile} - 1rem));
+    border-top: 2px solid transparent;
+
+    @media (min-width: $xxl-breakpoint) {
+      border-top-width: 4px;
+    }
+
+    &.filter-menu--active {
+      transform: translateY($header-height-desktop-mobile);
+
+      @media (min-width: $xxl-breakpoint) {
+        transform: translateY($header-height-desktop);
+      }
+    }
+  }
+
+  .site-header--bottom & {
+    bottom: 100%;
+    transform: translateY(1rem);
+    border-bottom: 2px solid transparent;
+
+    @media (min-width: $xxl-breakpoint) {
+      border-width: 4px;
+    }
+
+    &.filter-menu--active {
+      transform: translate(0);
+    }
+  }
+
+  &.filter-menu--active {
+    visibility: visible;
+    opacity: 1;
+    transition-duration: 0.3s;
+  }
+
+  &__form {
+    width: 100%;
+    display: flex;
+    background-color: $header-bg-color;
+    flex-wrap: wrap;
+
+    @include media-breakpoint-up(lg) {
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__select {
+    position: relative;
+    width: 100%;
+    border-bottom: 1px solid $nav-sub-border-color;
+
+    @include media-breakpoint-up(lg) {
+      width: 180px;
+      border-bottom: none;
+      border-right: 1px solid $nav-sub-border-color;
+    }
+
+    @media (min-width: $xxl-breakpoint) {
+      width: 220px;
+
+      .cs-placeholder {
+        padding-top: 47px;
+        padding-bottom: 35px;
+        font-size: 1.125rem;
+        letter-spacing: -0.03em;
+      }
+    }
+  }
+
+  &__submit {
+    padding: 20px;
+    white-space: nowrap;
+
+    @include media-breakpoint-down(md) {
+      width: 100%;
+    }
+
+    @media (min-width: $xxl-breakpoint) {
+      padding-top: 30px;
+    }
+
+    button {
+      @media (min-width: $xxl-breakpoint) {
+        font-size: 0.75rem;
+        padding: 0.5rem 1.875rem;
+        display: flex;
+        align-items: center;
+        gap: 0.125rem;
+        height: 40px;
+
+        i {
+          font-size: 14px;
+          line-height: 1em;
+        }
+      }
+    }
+  }
+
+  &__label {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    margin-bottom: 0;
+    font-weight: 700;
+    font-size: 0.6875rem;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    line-height: 1;
+    color: $tiny-color;
+
+    @media (min-width: $xxl-breakpoint) {
+      top: 35px;
+      font-size: 0.703125rem;
+    }
+  }
+
+  .cs-select > span::after {
+    @media (min-width: $xxl-breakpoint) {
+      top: 54px;
+    }
+  }
+
+  .cs-select > span::before {
+    @media (min-width: $xxl-breakpoint) {
+      top: 52px;
+    }
+  }
+}

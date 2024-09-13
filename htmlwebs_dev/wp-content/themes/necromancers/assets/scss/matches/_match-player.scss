@@ -1,0 +1,173 @@
+//- Match Stats Player
+//- ----------------------------------------------
+
+.match-player {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-bottom: 0;
+  overflow: hidden;
+  --team-color: var(--color-primary);
+
+  &__avatar {
+    position: relative;
+    margin-bottom: 0;
+
+    .match-player--small & {
+      margin-right: 12px;
+
+      .lineups-table td:last-child & {
+        margin-right: 0;
+        margin-left: 12px;
+      }
+    }
+
+    .match-player:not(.match-player--small) & {
+      &:before {
+        position: absolute;
+        top: -50%;
+        right: 40%;
+        bottom: -50%;
+        left: -50%;
+        content: "";
+        background-color: var(--team-color, var(--color-primary));
+        transform: rotate(20deg);
+      }
+    }
+
+    img {
+      position: relative;
+      width: 100%;
+      z-index: 1;
+
+      .match-player--small & {
+        margin-bottom: 3px;
+
+        .lineups-table & {
+          margin-bottom: 1px;
+        }
+      }
+
+      .match-player--xs & {
+        width: 30px;
+        height: 30px;
+        object-fit: cover;
+
+        @media (min-width: $xxl-breakpoint) {
+          width: 42px;
+          height: 42px;
+        }
+      }
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+      vertical-align: middle;
+      fill: $primary;
+    }
+  }
+
+  &__name {
+    display: block;
+    font-size: .625rem;
+    color: $secondary;
+
+    @media (min-width: $xxl-breakpoint) {
+      font-size: .875rem;
+    }
+
+    .lineups-table & {
+      text-transform: uppercase;
+    }
+  }
+
+  &__skills {
+    display: flex;
+    flex-direction: column;
+    margin-right: 12px;
+    margin-bottom: 3px;
+
+    .lineups-table & {
+      margin-bottom: 1px;
+    }
+
+    .match-player--small & {
+      margin-left: -10px;
+
+      .lineups-table td:last-child & {
+        order: 1;
+        margin-left: 12px;
+        margin-right: -10px;
+      }
+    }
+
+    img + img {
+      margin-top: 2px;
+    }
+  }
+
+  &__level {
+    position: absolute;
+    bottom: 1px;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    font-size: .5rem;
+    line-height: 12px;
+    text-align: center;
+    background-color: $secondary;
+    z-index: 1;
+
+    .lineups-table td:last-child & {
+      right: auto;
+      left: 0;
+    }
+  }
+
+  &__nickname {
+    font-size: .875rem;
+    text-transform: none;
+
+    @media (min-width: $xxl-breakpoint) {
+      font-size: 1.125rem;
+    }
+
+    > a {
+      color: $light;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+
+.match-player--wrapped {
+
+  .match-player__avatar {
+    width: 90px;
+    height: 70px;
+    overflow: hidden;
+    position: relative;
+  
+    @media (min-width: $xxl-breakpoint) {
+      width: 120px;
+      height: 93px;
+    }
+  
+    img:not(.match-player__placeholder) {
+      width: 105px;
+      max-width: none;
+      position: absolute;
+      left: 50%;
+      top: -10%;
+      transform: translateX(-50%);
+  
+      @media (min-width: $xxl-breakpoint) {
+        width: 120px;
+      }
+    }
+  }
+}

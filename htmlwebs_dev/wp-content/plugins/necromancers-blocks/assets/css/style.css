@@ -1,0 +1,65 @@
+.acf-block-preview {
+  overflow: hidden;
+}
+.acf-block-preview::after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+/* Button */
+.ncr-button.aligncenter {
+  text-align: center;
+}
+
+/* Heading Lead */
+.ncr-heading-lead .landing-subtitle {
+  display: block;
+}
+.ncr-heading-lead.aligncenter {
+  text-align: center;
+}
+
+@media (min-width: 992px) {
+  .ncr-heading-lead .h-lead-1 {
+    font-size: 6.375rem;
+  }
+  .ncr-heading-lead .h-lead-1 .subtitle {
+    font-size: 1.875rem;
+  }
+}
+
+/* Social Links */
+@media (min-width: 1200px) {
+  ul.social-menu--landing li {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+}
+
+/* Team Gallery */
+.ncr-team-gallery {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.team-selection-col {
+  flex: 0 0 25%;
+  max-width: 25%;
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  text-align: center;
+}
+
+.ncr-team-gallery .team-selection-item__title {
+  margin-top: 0;
+}
+
+.ncr-team-gallery .team-selection-item__title {
+  font-size: 1.65em;
+}

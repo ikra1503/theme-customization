@@ -1,0 +1,68 @@
+//- Matches Table
+//- ----------------------------------------------
+
+.matches-table {
+  margin-bottom: 0;
+  font-weight: $font-weight-bold;
+  line-height: 1;
+  letter-spacing: -.03em;
+  text-transform: uppercase;
+  color: $light;
+  border: none;
+
+  thead {
+
+    tr {
+      
+      th {
+        border: none;
+      }
+    }
+  }
+
+  tfoot {
+
+    tr {
+      
+      td {
+        border: none;
+      }
+    }
+  }
+
+  tbody {
+
+    & > tr:first-child td {
+      border-top: none;
+    }
+
+    tr {
+      &:nth-child(odd) {
+        background-color: $dark;
+      }
+
+      &:nth-child(even) {
+        background-color: $black;
+      }
+    }
+
+    td {
+      vertical-align: middle;
+      border-color: alpha($secondary, 0.2);
+      border-left: 0;
+      border-right: 0;
+
+      &.data-article {
+
+        .dashicons {
+          padding-right: 0;
+          margin-right: .25em;
+          vertical-align: middle;
+          line-height: 1em;
+          position: relative;
+          top: -1px;
+        }
+      }
+    }
+  }
+}

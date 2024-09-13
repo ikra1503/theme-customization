@@ -1,0 +1,18 @@
+//- Widget: Carousel
+//- ----------------------------------------------
+
+.widget-carousel {
+  &__item {
+    display: block;
+    position: relative;
+    height: calc(100vh - #{$header-height-desktop-mobile});
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: $dark;
+
+    @media (min-width: $xxl-breakpoint) {
+      height: calc(100vh - #{$header-height-desktop});
+    }
+  }
+}

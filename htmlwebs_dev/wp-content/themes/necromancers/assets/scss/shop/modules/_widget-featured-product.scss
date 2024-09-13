@@ -1,0 +1,140 @@
+.widget-featured-product {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+
+  @include media-breakpoint-down(md) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  @include media-breakpoint-between(sm, md) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    height: calc(100vh - #{$header-height-desktop-mobile});
+  }
+
+  @media (min-width: $xxl-breakpoint) {
+    height: calc(100vh - #{$header-height-desktop});
+  }
+
+  .widget {
+    &__price,
+    &__title,
+    &__subtitle {
+      margin-bottom: 1px;
+      color: $light;
+      z-index: 4;
+    }
+
+    &__title {
+      margin-bottom: 24px;
+      font-size: 4.5rem;
+
+      @include media-breakpoint-down(sm) {
+        font-size: 2.125rem;
+      }
+
+      @media (min-width: $xxl-breakpoint) {
+        margin-bottom: 26px;
+        font-size: 5.125rem;
+      }
+
+      span {
+        display: block;
+      }
+
+      // highlight the first line
+      &--highlight {
+        &::first-line {
+          color: $primary;
+        }
+      }
+    }
+
+    &__subtitle {
+      font-size: 1.125rem;
+      font-weight: 500;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+
+      @media (min-width: $xxl-breakpoint) {
+        font-size: 1.75rem;
+      }
+    }
+
+    &__thumbnail {
+      position: relative;
+      z-index: 4;
+
+      img {
+        max-width: 100%;
+      }
+    }
+
+    &__price {
+      position: absolute;
+      top: 27px;
+      right: 20px;
+      pointer-events: none;
+
+      @media (min-width: 375px) {
+        left: 76.5%;
+        right: auto;
+      }
+    }
+
+    &__price-label,
+    &__price-count {
+      font-weight: $font-weight-bold;
+      letter-spacing: -0.03em;
+      text-align: left;
+      text-transform: uppercase;
+    }
+
+    &__price-count {
+      font-size: 1.625rem;
+      line-height: 0.7;
+      color: $primary;
+
+      @media (min-width: $xxl-breakpoint) {
+        font-size: 2.25rem;
+      }
+
+      .woocommerce-Price-currencySymbol {
+        color: $white;
+      }
+
+      // sale
+      del {
+        display: block;
+        font-size: 0.65em;
+        line-height: 1.2em;
+        color: $text-muted;
+      }
+
+      ins {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .add-icon {
+    position: absolute;
+    top: 12px;
+    right: calc(100% + 10px);
+
+    @media (min-width: $xxl-breakpoint) {
+      right: calc(100% + 15px);
+    }
+  }
+}

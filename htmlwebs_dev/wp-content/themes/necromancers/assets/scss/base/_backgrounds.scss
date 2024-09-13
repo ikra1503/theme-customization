@@ -1,0 +1,411 @@
+//- Backgrounds
+//- ----------------------------------------------
+
+.bg-image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: $dark;
+}
+
+.bg-fixed {
+  background-attachment: fixed;
+}
+
+/**
+ *
+ * Page Backgrounds
+ *
+ */
+
+.bg--texture-01 {
+  background-image: url('../img/bg-texture-01.jpg');
+}
+
+.bg--texture-02 {
+  background-image: url('../img/bg-texture-02.jpg');
+}
+
+.bg--texture-03 {
+  background-image: url('../img/bg-texture-03.jpg');
+}
+
+.bg--texture-04 {
+  background-image: url('../img/bg-texture-04.jpg');
+}
+
+.bg--texture-05 {
+  background-image: url('../img/bg-texture-05.jpg');
+}
+
+.bg--texture-06 {
+  background-image: url('../img/bg-texture-06.jpg');
+}
+
+.bg--texture-07 {
+  background-image: url('../img/bg-texture-07.jpg');
+}
+
+/**
+ *
+ * Page Textures
+ * adds dotted pattern over the background
+ *
+ */
+
+.bg--dotted-3x3 {
+  &::after {
+    content: '';
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../img/3x3-black.gif');
+    background-repeat: repeat;
+    background-position: 50% 0;
+    z-index: -1;
+
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+      background-image: url('../img/3x3-black@2x.gif');
+      background-size: 3px 3px;
+    }
+  }
+}
+
+/**
+ *
+ * Shop Backgrounds
+ *
+ */
+
+.bg--product-color-01 {
+  background-color: $body-bg;
+}
+
+.bg--product-color-02 {
+  background-color: $danger;
+}
+
+.bg--product-color-03 {
+  background-color: $body-color-dark;
+}
+
+/**
+ *
+ * Borders
+ *
+ */
+
+.bc-color-pallete-01 {
+  border-color: $dark;
+}
+
+.bc-color-pallete-02 {
+  border-color: $body-color;
+}
+
+.bc-color-pallete-03 {
+  border-color: $secondary;
+}
+
+.bc-color-pallete-04 {
+  border-color: $info;
+}
+
+.bc-color-pallete-05 {
+  border-color: $warning;
+}
+
+.bc-color-pallete-06 {
+  border-color: $danger;
+}
+
+.bc-color-pallete-07 {
+  border-color: $success;
+}
+
+.bc-color-pallete-08 {
+  border-color: $primary;
+}
+
+.page-heading__img-layer {
+  display: block;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  will-change: transform;
+}
+
+@media not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) {
+    // fixes bug in Safari with hidden image layer
+    .page-heading__img-layer {
+      will-change: auto;
+    }
+  }
+}
+
+// Duotone
+.effect-duotone {
+  position: relative;
+  will-change: transform;
+}
+
+.effect-duotone__layer {
+  &::before,
+  &::after {
+    content: '';
+  }
+
+  &,
+  &::before,
+  &::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+
+  &::before {
+    background-color: #000;
+    mix-blend-mode: color;
+    z-index: 1;
+  }
+  &::after {
+    mix-blend-mode: lighten;
+    z-index: 3;
+    background-color: #222430;
+  }
+}
+
+.effect-duotone__layer-inner {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+  mix-blend-mode: multiply;
+}
+
+.page-heading-effect {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.page-heading-effect--gradient-1 {
+  bottom: 0;
+  z-index: 3;
+  background-image: radial-gradient(circle farthest-side at 50% 10%, rgba(255, 255, 255, 1), transparent);
+  mix-blend-mode: overlay;
+
+  @include media-breakpoint-up(md) {
+    bottom: 50%;
+  }
+}
+
+.page-heading-effect--gradient-2 {
+  z-index: 3;
+  background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7));
+}
+
+.page-heading-effect--pattern {
+  position: absolute;
+  z-index: 3;
+  overflow: hidden;
+  background-color: transparent;
+  background-image: radial-gradient(#fff 1px, transparent 1px);
+  background-position: 0 50%;
+  background-size: 32px 32px;
+  mix-blend-mode: overlay;
+  clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+  transition-delay: 2s;
+  transition: clip-path 4s ease-in-out;
+
+  .scroll-is--active & {
+    clip-path: polygon(0% 0%, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+.page-heading-effect--pattern-1 {
+  left: 60%;
+  top: 0;
+  width: 100%;
+  height: 100px;
+}
+
+.page-heading-effect--pattern-2 {
+  left: 0;
+  top: auto;
+  bottom: 18px;
+  width: 75%;
+  height: 130px;
+}
+
+.page-heading-effect--pattern-3 {
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 130px;
+}
+
+// Duotone: Base
+.effect-duotone--base {
+  .effect-duotone__layer {
+    &::after {
+      background-color: #222430;
+      mix-blend-mode: screen;
+    }
+  }
+  .effect-duotone__layer-inner {
+    background-color: #222430;
+  }
+}
+
+// Duotone: Purple
+.effect-duotone--purple {
+  .page-heading__img-layer {
+    opacity: 1;
+    mix-blend-mode: screen;
+  }
+
+  .effect-duotone__layer {
+    &::after {
+      background-color: #1d0042;
+      mix-blend-mode: screen;
+    }
+  }
+  .effect-duotone__layer-inner {
+    background-color: #3922e4;
+  }
+
+  .page-heading-effect--gradient-1 {
+    bottom: 30%;
+    background-image: radial-gradient(85% 80% at 50% top, #e267fe, transparent);
+    mix-blend-mode: normal;
+    opacity: 0.9;
+  }
+
+  .page-heading-effect--gradient-2 {
+    display: none;
+  }
+}
+
+// Duotone: Red
+.effect-duotone--red {
+  .page-heading__img-layer {
+    opacity: 1;
+    mix-blend-mode: screen;
+  }
+
+  .effect-duotone__layer {
+    &::after {
+      background-color: #000;
+      mix-blend-mode: screen;
+    }
+  }
+  .effect-duotone__layer-inner {
+    background-color: #a70f3a;
+  }
+}
+
+// Duotone: Blue
+.effect-duotone--blue {
+  .page-heading__img-layer {
+    opacity: 1;
+    mix-blend-mode: screen;
+  }
+
+  .effect-duotone__layer {
+    &::after {
+      background-color: #1d0042;
+      mix-blend-mode: screen;
+    }
+  }
+  .effect-duotone__layer-inner {
+    background-color: #1ce7ff;
+  }
+
+  .ncr-bg__img-layer {
+    opacity: 0.2;
+  }
+
+  .ncr-bg-effect--gradient-1 {
+    z-index: -1;
+    background-image: radial-gradient(45% 55% at 50% top, rgba(255, 255, 255, 0.9), transparent);
+  }
+
+  .ncr-bg-effect--gradient-2 {
+    background-image: radial-gradient(30% 40% at 50% 10%, transparent, rgba(0, 0, 0, 0.35));
+  }
+}
+
+// Background Layer
+// needed if we want to set a background and then add duotone effect on it
+.ncr-bg {
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+.ncr-bg__img-layer {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  // will-change: transform;
+}
+
+@media not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) {
+    // fixes bug in Safari with hidden image layer
+    .ncr-bg__img-layer {
+      will-change: auto;
+    }
+  }
+}
+
+.ncr-bg-effect {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.ncr-bg-effect--gradient-1 {
+  bottom: 0;
+  z-index: 3;
+  background-image: radial-gradient(80% 60% at 50% top, rgba(255, 255, 255, 0.85), transparent);
+  mix-blend-mode: overlay;
+
+  .single-sp_event & {
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
+  }
+}
+
+.ncr-bg-effect--gradient-2 {
+  z-index: 3;
+  background-image: radial-gradient(30% 40% at 50% 10%, transparent, rgba(0, 0, 0, 0.72));
+  mix-blend-mode: overlay;
+}
