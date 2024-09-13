@@ -1,0 +1,633 @@
+:root {
+  --ldp-primary-color: #fd512f;
+  --ldp-font-family: Manrope;
+  --ldp-heading-font-family: Poppins, sans-serif;
+}
+
+.px-100, .pl-100 {
+  padding-left: 100px;
+}
+
+.px-100, .pr-100 {
+  padding-right: 100px;
+}
+
+.my-50, .mb-50 {
+  margin-bottom: 50px;
+}
+
+.my-50, .mt-50 {
+  margin-top: 50px;
+}
+
+.rounded-md {
+  border-radius: 0.5rem;
+}
+
+body:not(.wp-admin) .wpcm-wrapper {
+  /**
+  * Popup Style 1.
+  */
+  /**
+  Popup style 2
+  */
+  /**
+  Popup style 3
+  */
+}
+body:not(.wp-admin) .wpcm-wrapper * {
+  font-family: var(--ldp-font-family);
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-1 .el-dialog__header {
+  padding: 0;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-1 .el-dialog__header .closep {
+  background-color: var(--ldp-primary-color);
+  border-radius: 50px;
+  top: -20px;
+  right: -20px;
+  z-index: 10;
+  opacity: 1;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-1 .el-dialog__body {
+  padding: 5px;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-1 .wpcm-amount-needed,
+body:not(.wp-admin) .wpcm-wrapper .donation-style-1 .wpcm-amount-collected {
+  text-align: center;
+  padding: 60px 35px;
+  border-top: 1px solid #c9c9c9;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-1 .wpcm-amount-needed .amount-return,
+body:not(.wp-admin) .wpcm-wrapper .donation-style-1 .wpcm-amount-collected .amount-return {
+  display: flex;
+  font-size: 52px;
+  font-family: var(--ldp-font-family);
+  justify-content: center;
+  line-height: 52px;
+  font-weight: bold;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-1 .wpcm-amount-needed .amount-return + span,
+body:not(.wp-admin) .wpcm-wrapper .donation-style-1 .wpcm-amount-collected .amount-return + span {
+  font-size: 16px;
+  color: #666666;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-1 .wpcm-amount-needed .amount-return > i,
+body:not(.wp-admin) .wpcm-wrapper .donation-style-1 .wpcm-amount-collected .amount-return > i {
+  color: var(--ldp-primary-color);
+  font-size: 26px;
+  line-height: 38px;
+  font-style: normal;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-1 .wpcm-radial-progress-bar {
+  text-align: center;
+  padding: 60px 35px;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-1 .wpcm-radial-progress-bar .circular {
+  margin: 0 auto;
+  max-width: 155px;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-1 .col-content {
+  background-image: url(../images/bg-style-1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 60px;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-1 .col-content .wpcm-top-title {
+  font-size: 16px;
+  color: #5e5b5b;
+  font-family: var(--ldp-font-family);
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-1 .col-content .wpcm-popup-title {
+  color: #181818;
+  font-size: 35px;
+  font-family: var(--ldp-font-family);
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-1 .col-content .wpcm-recurring-btns ul {
+  width: 100%;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-1 .col-content .wpcm-recurring-btns ul > li {
+  width: 50%;
+  flex: 0 50%;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-1 .col-content .wpcm-recurring-btns ul > li a {
+  background-color: #232323;
+  padding: 20px 0;
+  display: block;
+  color: #fff;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: var(--ldp-font-family);
+  position: relative;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-1 .col-content .wpcm-recurring-btns ul > li a.active {
+  background-color: var(--ldp-primary-color);
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-1 .col-content .wpcm-recurring-btns ul > li a.active::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  transform: rotate(135deg);
+  bottom: -5px;
+  left: 50%;
+  background-color: var(--ldp-primary-color);
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-1 .col-content .wpcm-payment-gateways ul {
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-1 .col-content .wpcm-payment-gateways ul li > a {
+  padding: 12px 25px;
+  border: 2px solid #d3d3d3;
+  display: block;
+  margin: 10px 10px 0 0;
+  background: #fff;
+  border-radius: 0;
+  font-family: var(--ldp-font-family);
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-1 .col-content .wpcm-payment-gateways ul li > a > span img {
+  margin-right: 10px;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-1 .col-content .wpcm-payment-gateways ul li > a.active, body:not(.wp-admin) .wpcm-wrapper .donation-style-1 .col-content .wpcm-payment-gateways ul li > a:hover {
+  background-color: var(--ldp-primary-color);
+  border-color: var(--ldp-primary-color);
+  color: #fff;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-1 .col-content .wpcm-payment-gateways ul li > a.active img, body:not(.wp-admin) .wpcm-wrapper .donation-style-1 .col-content .wpcm-payment-gateways ul li > a:hover img {
+  filter: brightness(0) invert(1);
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-1 .col-content .wpcm-payment-gateways .wpcm-back-btn,
+body:not(.wp-admin) .wpcm-wrapper .donation-style-1 .col-content .wpcm-payment-gateways .wpcm-proceed-btn {
+  background-color: var(--ldp-primary-color);
+  color: #fff;
+  width: 97%;
+  height: 66px;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 900;
+  margin-top: 10px;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-1 .col-content .wpcm-payment-gateways .wpcm-back-btn {
+  background-color: transparent;
+  border: 2px solid var(--ldp-primary-color);
+  color: var(--ldp-primary-color);
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-1 .col-content .el-select .el-input__inner {
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 10px 30px;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-1 .col-content .wpcm-cstm-amt-txt {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 1.5rem 0;
+  display: block;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-1 .col-content .wpcm-pre-dfind-amt {
+  display: flex;
+  flex-wrap: wrap;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-1 .col-content .wpcm-pre-dfind-amt a {
+  padding: 20px 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border: 1px solid #fff;
+  background: #fff;
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 0;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  min-width: 75px;
+  text-align: center;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-1 .col-content .wpcm-pre-dfind-amt a.active, body:not(.wp-admin) .wpcm-wrapper .donation-style-1 .col-content .wpcm-pre-dfind-amt a:hover {
+  border-color: var(--ldp-primary-color);
+  color: var(--ldp-primary-color);
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-1 .col-content .wpcm-custm-amt-title {
+  background-color: #232323;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 20px 0;
+  margin-top: 20px;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-1 .col-content .wpcm-custm-amt-box {
+  display: flex;
+  margin-top: 20px;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-1 .col-content .wpcm-custm-amt-box .wpcm-symbl-prefix {
+  background-color: var(--ldp-primary-color);
+  color: #fff;
+  width: 150px;
+  text-align: center;
+  padding: 11px 0;
+  font-size: 24px;
+  margin-right: -4px;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-1 .col-content .wpcm-custm-amt-box input {
+  border: none;
+  font-size: 18px;
+  padding: 0 15px;
+  width: 100px;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-1 .col-content .wpcm-custm-amt-box .wpcm-proceed-btn {
+  margin-left: 50px;
+  width: 100%;
+  border: none;
+  background-color: var(--ldp-primary-color);
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 900;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-2 .el-dialog__header {
+  padding: 0;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-2 .el-dialog__header .closep {
+  background-color: var(--ldp-primary-color);
+  border-radius: 50px;
+  top: -20px;
+  right: -20px;
+  z-index: 10;
+  opacity: 1;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-2 .el-dialog__header {
+  background: url("../images/bg-popup-2.jpg") no-repeat;
+  background-size: cover;
+  height: 230px;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-2 .el-dialog__body {
+  padding: 0;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-2 .wpcm-heading {
+  font-size: 35px;
+  font-weight: 900;
+  margin: 30px 0 20px;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-2 .col-content {
+  padding: 0 50px 50px;
+  margin-top: -40px;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-2 .col-content .wpcm-recurring-btns ul {
+  width: 100%;
+  max-width: 420px;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-2 .col-content .wpcm-recurring-btns ul > li {
+  width: 50%;
+  flex: 0 50%;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-2 .col-content .wpcm-recurring-btns ul > li a {
+  background-color: #fff;
+  padding: 20px 0;
+  display: block;
+  color: var(--ldp-primary-color);
+  border: 2px solid var(--ldp-primary-color);
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: var(--ldp-font-family);
+  position: relative;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-2 .col-content .wpcm-recurring-btns ul > li a.active {
+  background-color: var(--ldp-primary-color);
+  color: #fff;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-2 .col-content .wpcm-recurring-btns ul > li a.active::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  transform: rotate(135deg);
+  bottom: -5px;
+  left: 50%;
+  background-color: var(--ldp-primary-color);
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-2 .col-content .wpcm-payment-gateways ul {
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-2 .col-content .wpcm-payment-gateways ul li > a {
+  padding: 12px 25px;
+  border: 2px solid #d3d3d3;
+  display: block;
+  margin: 10px 10px 0 0;
+  background: #fff;
+  border-radius: 0;
+  font-family: var(--ldp-font-family);
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-2 .col-content .wpcm-payment-gateways ul li > a > span img {
+  margin-right: 10px;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-2 .col-content .wpcm-payment-gateways ul li > a.active, body:not(.wp-admin) .wpcm-wrapper .donation-style-2 .col-content .wpcm-payment-gateways ul li > a:hover {
+  background-color: var(--ldp-primary-color);
+  border-color: var(--ldp-primary-color);
+  color: #fff;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-2 .col-content .wpcm-payment-gateways ul li > a.active img, body:not(.wp-admin) .wpcm-wrapper .donation-style-2 .col-content .wpcm-payment-gateways ul li > a:hover img {
+  filter: brightness(0) invert(1);
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-2 .col-content .wpcm-recurring-cycle-drp {
+  margin-bottom: 20px;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-2 .col-content .el-select .el-input__inner {
+  box-shadow: none;
+  border: 2px solid var(--ldp-primary-color);
+  padding: 10px 30px;
+  height: 70px;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-2 .col-content .wpcm-donation-amt-fields .el-custom-select {
+  width: 49.5%;
+  display: inline-block;
+  padding-right: 30px;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-2 .col-content .wpcm-donation-amt-fields .wpcm-custm-amnt-txt {
+  width: 50%;
+  display: inline-block;
+  background-color: #232323;
+  color: #fff;
+  font-size: 15px;
+  line-height: 60px;
+  text-align: center;
+  margin: 0 !important;
+  font-weight: 400;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-2 .col-content .wpcm-cstm-amt-txt {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 2rem 0 1rem;
+  display: inline-block;
+  color: #262626;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-2 .col-content .wpcm-cstm-amt-txt:first-child {
+  width: 62%;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-2 .col-content .wpcm-cstm-amt-txt:last-child {
+  width: 38%;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-2 .col-content .wpcm-pre-dfind-amt {
+  display: inline-flex;
+  flex-wrap: wrap;
+  width: 62%;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-2 .col-content .wpcm-pre-dfind-amt a {
+  padding: 17px 15px;
+  border: 1px solid #ddd;
+  background: #fff;
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 0;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  min-width: 75px;
+  text-align: center;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-2 .col-content .wpcm-pre-dfind-amt a.active, body:not(.wp-admin) .wpcm-wrapper .donation-style-2 .col-content .wpcm-pre-dfind-amt a:hover {
+  border-color: var(--ldp-primary-color);
+  color: #fff;
+  background-color: var(--ldp-primary-color);
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-2 .col-content .wpcm-custm-amt-title {
+  background-color: #232323;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 20px 0;
+  margin-top: 20px;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-2 .col-content .wpcm-custom-amt-box-container .wpcm-custm-amt-box {
+  display: inline-flex;
+  width: 37%;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-2 .col-content .wpcm-custom-amt-box-container .wpcm-custm-amt-box .wpcm-symbl-prefix {
+  background-color: #232323;
+  color: #fff;
+  width: 105px;
+  text-align: center;
+  padding: 11px 0;
+  font-size: 24px;
+  margin-right: -4px;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-2 .col-content .wpcm-custom-amt-box-container .wpcm-custm-amt-box input {
+  border: none;
+  font-size: 18px;
+  padding: 0 15px;
+  width: 100%;
+  background-color: #f1f1f1;
+  box-shadow: none;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-2 .col-content .wpcm-next-btn {
+  margin: 20px 0 0 15px;
+  border: none;
+  background-color: var(--ldp-primary-color);
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 900;
+  padding: 20px 80px;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-2 .col-content .wpcm-back-btn,
+body:not(.wp-admin) .wpcm-wrapper .donation-style-2 .col-content .wpcm-proceed-btn {
+  width: 100%;
+  background-color: var(--ldp-primary-color);
+  color: #fff;
+  line-height: 40px;
+  font-size: 15px;
+  font-weight: 900;
+  margin-top: 30px;
+  text-transform: uppercase;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-2 .col-content .wpcm-proceed-btn {
+  width: 98%;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-2 .col-content .wpcm-back-btn {
+  background-color: #fff;
+  border-color: var(--ldp-primary-color);
+  color: var(--ldp-primary-color);
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-3 .el-dialog__header {
+  padding: 0;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-3 .el-dialog__header .closep {
+  background-color: var(--ldp-primary-color);
+  border-radius: 50px;
+  top: -20px;
+  right: -20px;
+  z-index: 10;
+  opacity: 1;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-3 .el-dialog__body {
+  padding: 0;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-3 .col-content {
+  padding: 60px 50px;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-3 .col-content .wpcm-heading {
+  font-size: 42px;
+  text-align: center;
+  font-weight: 900;
+  margin-bottom: 25px;
+  color: #181818;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-3 .col-content .wpcm-recurring-cycle-drp {
+  margin-bottom: 1.5rem;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-3 .col-content .wpcm-recurring-btns ul {
+  width: 100%;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-3 .col-content .wpcm-recurring-btns ul > li {
+  width: 50%;
+  flex: 0 50%;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-3 .col-content .wpcm-recurring-btns ul > li a {
+  background-color: #fff;
+  padding: 20px 0;
+  display: block;
+  color: var(--ldp-primary-color);
+  border: 2px solid var(--ldp-primary-color);
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: var(--ldp-font-family);
+  position: relative;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-3 .col-content .wpcm-recurring-btns ul > li a.active {
+  background-color: var(--ldp-primary-color);
+  color: #fff;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-3 .col-content .wpcm-recurring-btns ul > li a.active::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  transform: rotate(135deg);
+  bottom: -5px;
+  left: 50%;
+  background-color: var(--ldp-primary-color);
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-3 .col-content .wpcm-payment-gateways ul {
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-3 .col-content .wpcm-payment-gateways ul li > a {
+  padding: 12px 25px;
+  border: 2px solid #d3d3d3;
+  display: block;
+  margin: 10px 10px 0 0;
+  background: #fff;
+  border-radius: 0;
+  font-family: var(--ldp-font-family);
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-3 .col-content .wpcm-payment-gateways ul li > a > span img {
+  margin-right: 10px;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-3 .col-content .wpcm-payment-gateways ul li > a.active, body:not(.wp-admin) .wpcm-wrapper .donation-style-3 .col-content .wpcm-payment-gateways ul li > a:hover {
+  background-color: var(--ldp-primary-color);
+  border-color: var(--ldp-primary-color);
+  color: #fff;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-3 .col-content .wpcm-payment-gateways ul li > a.active img, body:not(.wp-admin) .wpcm-wrapper .donation-style-3 .col-content .wpcm-payment-gateways ul li > a:hover img {
+  filter: brightness(0) invert(1);
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-3 .col-content .StripeElement.shadow {
+  box-shadow: none !important;
+  border: 1px solid #aaa;
+  border-radius: 0 !important;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-3 .col-content .el-custom-select .el-input__suffix {
+  height: 50%;
+  top: 22%;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-3 .col-content .el-custom-select .el-input__inner {
+  box-shadow: none;
+  border: 2px solid var(--ldp-primary-color);
+  padding: 10px 30px;
+  height: 70px;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-3 .col-content .wpcm-cstm-amt-txt {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 1.5rem 0;
+  display: block;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-3 .col-content .wpcm-pre-dfind-amt {
+  display: flex;
+  flex-wrap: wrap;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-3 .col-content .wpcm-pre-dfind-amt a {
+  padding: 20px 15px;
+  border: 1px solid #ddd;
+  background: #fff;
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 0;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  min-width: 75px;
+  text-align: center;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-3 .col-content .wpcm-pre-dfind-amt a.active, body:not(.wp-admin) .wpcm-wrapper .donation-style-3 .col-content .wpcm-pre-dfind-amt a:hover {
+  border-color: var(--ldp-primary-color);
+  color: var(--ldp-primary-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-3 .col-content .wpcm-custm-amt-title {
+  background-color: #232323;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 20px 0;
+  margin-top: 20px;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-3 .col-content .wpcm-custm-amt-box {
+  display: flex;
+  margin-top: 20px;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-3 .col-content .wpcm-custm-amt-box .wpcm-symbl-prefix {
+  background-color: #232323;
+  color: #fff;
+  width: 80px;
+  text-align: center;
+  padding: 11px 0;
+  font-size: 24px;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-3 .col-content .wpcm-custm-amt-box input {
+  border: none;
+  box-shadow: none;
+  background-color: #f1f1f1;
+  font-size: 18px;
+  padding: 0 25px;
+  width: 100%;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-3 .col-content .wpcm-back-btn,
+body:not(.wp-admin) .wpcm-wrapper .donation-style-3 .col-content .donation-done,
+body:not(.wp-admin) .wpcm-wrapper .donation-style-3 .col-content .wpcm-next-btn {
+  width: 100%;
+  background-color: var(--ldp-primary-color);
+  color: #fff;
+  line-height: 40px;
+  font-size: 15px;
+  font-weight: 900;
+  margin-top: 30px;
+  text-transform: uppercase;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-3 .col-content .donation-done {
+  width: 98%;
+}
+body:not(.wp-admin) .wpcm-wrapper .donation-style-3 .col-content .wpcm-back-btn {
+  background-color: #fff;
+  border-color: var(--ldp-primary-color);
+  color: var(--ldp-primary-color);
+}
+/*# sourceMappingURL=main.css.map*/

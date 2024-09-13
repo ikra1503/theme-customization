@@ -1,0 +1,77 @@
+[
+    {
+        "title": "Stripe Payment Gateway Extension for Lifeline Donation Plugin",
+        "src": "https:\/\/www.webinane.com\/uploads\/2021\/07\/213\/conversions\/stripejpeg-60e1b0fbf1ae7-homepage.jpg",
+        "url": "https://webinane.com\/plugins\/stripe"
+    },
+    {
+        "title": "Stripe with iDeal Payment Gateway Extension for Lifeline Donation Plugin",
+        "src": "https:\/\/www.webinane.com\/uploads\/2021\/07\/212\/conversions\/stripe-idealjpeg-60e1b0ee873bf-homepage.jpg",
+        "url": "https://webinane.com\/plugins\/stripe-with-ideal"
+    },
+    {
+        "title": "Yandex Payment Gateway Extension for Lifeline Donation Plugin",
+        "src": "https:\/\/www.webinane.com\/uploads\/2021\/07\/211\/conversions\/yandexjpeg-60e1b0e0f3738-homepage.jpg",
+        "url": "https://webinane.com\/plugins\/yandex"
+    },
+    {
+        "title": "QuickPay Payment Gateway Extension for Lifeline Donation Plugin",
+        "src": "https:\/\/www.webinane.com\/uploads\/2021\/07\/210\/conversions\/quickpayjpeg-60e1b0d00e07b-homepage.jpg",
+        "url": "https://webinane.com\/plugins\/quickpay"
+    },
+    {
+        "title": "PayU Payment Gateway Extension for Lifeline Donation Plugin",
+        "src": "https:\/\/www.webinane.com\/uploads\/2021\/07\/209\/conversions\/payujpeg-60e1b0b46d4a0-homepage.jpg",
+        "url": "https://webinane.com\/plugins\/payu"
+    },
+    {
+        "title": "Paystack Payment Gateway Extension for Lifeline Donation Plugin",
+        "src": "https:\/\/www.webinane.com\/uploads\/2021\/07\/208\/conversions\/paystackjpeg-60e1b099e0a96-homepage.jpg",
+        "url": "https://webinane.com\/plugins\/paystack"
+    },
+    {
+        "title": "PayPal Pro Payment Gateway Extension for Lifeline Donation Plugin",
+        "src": "https:\/\/www.webinane.com\/uploads\/2021\/07\/207\/conversions\/paypal-projpeg-60e1b016e5a3b-homepage.jpg",
+        "url": "https://webinane.com\/plugins\/paypal-pro"
+    },
+    {
+        "title": "Paymaster24 Payment Gateway Extension for Lifeline Donation Plugin",
+        "src": "https:\/\/www.webinane.com\/uploads\/2021\/07\/206\/conversions\/paymasterjpeg-60e1af4569f3b-homepage.jpg",
+        "url": "https://webinane.com\/plugins\/paymaster24"
+    },
+    {
+        "title": "Conekta Payment Gateway Extension for Lifeline Donation Plugin",
+        "src": "https:\/\/www.webinane.com\/uploads\/2021\/07\/205\/conversions\/connektapng-60e1af1869ef3-homepage.jpg",
+        "url": "https://webinane.com\/plugins\/conekta"
+    },
+    {
+        "title": "Braintree Payment Gateway Extension for Lifeline Donation Plugin",
+        "src": "https:\/\/www.webinane.com\/uploads\/2021\/07\/204\/conversions\/braintreejpeg-60e1aee826151-homepage.jpg",
+        "url": "https://webinane.com\/plugins\/braintree"
+    },
+    {
+        "title": "BluePay Payment Gateway Extension for Lifeline Donation Plugin",
+        "src": "https:\/\/www.webinane.com\/uploads\/2021\/07\/203\/conversions\/bluepayjpeg-60e1aea66ae21-homepage.jpg",
+        "url": "https://webinane.com\/plugins\/bluepay"
+    },
+    {
+        "title": "Authorize.Net Payment Gateway Extension for Lifeline Donation Plugin",
+        "src": "https:\/\/www.webinane.com\/uploads\/2021\/07\/202\/conversions\/authorizedotnetjpeg-60e1ae6e08279-homepage.jpg",
+        "url": "https://webinane.com\/plugins\/authorize.net"
+    },
+    {
+        "title": "Amazon Pay Payment Gateway Extension for Lifeline Donation Plugin",
+        "src": "https:\/\/www.webinane.com\/uploads\/2021\/07\/201\/conversions\/amazonpayjpeg-60e1ae339379e-homepage.jpg",
+        "url": "https://webinane.com\/plugins\/amazon-pay"
+    },
+    {
+        "title": "2Checkout Payment Gateway Extension For Lifeline Donation Plugin",
+        "src": "https:\/\/www.webinane.com\/uploads\/2021\/07\/200\/conversions\/2checkoutjpeg-60e1ade061ae5-homepage.jpg",
+        "url": "https://webinane.com\/plugins\/2checkout"
+    },
+    {
+        "title": "CardCom Payment Gateway Extension For Lifeline Donation Plugin",
+        "src": "https:\/\/www.webinane.com\/uploads\/2021\/07\/199\/conversions\/card-comjpeg-60e1ad2ebe940-homepage.jpg",
+        "url": "https://webinane.com\/plugins\/cardcom-extension"
+    }
+]

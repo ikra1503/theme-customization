@@ -1,0 +1,40 @@
+.hotel {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+  display: flex; /* Makes the content flex around the image */
+}
+
+.hotel img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover; /* Scales the image to fit the container */
+  border-radius: 5px 0 0 5px; /* Rounds the top left corner to match the card */
+}
+
+.hotel .hotel-content {
+  padding: 20px;
+  flex: 1; /* Fills the remaining space */
+}
+
+.hotel h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.hotel p {
+  margin-bottom: 5px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.hotel a {
+  text-decoration: none;
+  color: #e0245e;
+  font-weight: bold;
+}
+
+.hotel a:hover {
+  text-decoration: underline;
+}

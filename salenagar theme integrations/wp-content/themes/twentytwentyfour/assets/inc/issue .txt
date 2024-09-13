@@ -1,0 +1,38 @@
+shipping in logged out not coming Done
+clear all in recent search   Done
+header call in cart done
+
+
+pending issues :
+
+recent search product is not going into add to cart  done 
+mini cart item not going into full cart Pending 
+
+
+
+
+todo:
+fixing plus-minus qty on ajax [done] 👍
+mini cart on ajaxrefresh done👍
+quantitiy value ajax refresh done 👍
+when we make quanitty value zero add to cart button come back done👍
+
+
+
+todo: 8mar
+bring data on front on change .done👍
+
+
+todo :11 mar 24
+mini cart issue:different variation id getting oneissue found
+
+cart page local pickup price 0 not happening
+
+
+
+pending:
+in on load 
+pass product id and variation id  both as per that quantity should be displayed [done👍]
+cart page pin code change  refresh fragments  [pending] 13 mar 2024
+
+

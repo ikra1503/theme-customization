@@ -1,0 +1,124 @@
+jQuery(document).ready(function () {
+    function showPopupNotification(message) {
+        var popup = $('<div class="popupNotification">' + message + '</div>');
+        $('body').append(popup);
+        popup.fadeIn(300);
+        setTimeout(function () {
+            popup.fadeOut(300, function () {
+                $(this).remove();
+            });
+        }, 3000);
+    }
+    function showSuccess(message) {
+        var popup = $('<div class="popupNotificationsuccess">' + message + '</div>');
+        $('body').append(popup);
+        popup.fadeIn(300);
+        setTimeout(function () {
+            popup.fadeOut(300, function () {
+                $(this).remove();
+            });
+        }, 3000);
+    }
+    var typingTimer;
+    var doneTypingInterval = 500;
+    $('.product').off('input click', '#qnty, .qty-plus, .qty-minus').on('input click', '#qnty, .qty-plus, .qty-minus', function (event) {
+        event.stopPropagation();
+
+        var $container = $(this).closest('.product');
+        var productId = $(this).data('product-id');
+        clearTimeout(typingTimer);
+        typingTimer = setTimeout(function () {
+            doneTyping($container, productId);
+        }, doneTypingInterval);
+    });
+
+    $(document).on('click', '.add-to-cart', function (e) {
+        e.preventDefault();
+        var $container = $(this).closest('.product');
+        var productId = $(this).data('product-id');
+        var variationIdColor = $container.find('#pa_color_' + productId).val();
+        var variationIdSize = $container.find('#pa_size_' + productId).val();
+        if (variationIdColor) {
+            variationIdColor = variationIdColor.toLowerCase();
+        }
+        if (variationIdSize) {
+            variationIdSize = variationIdSize.toLowerCase();
+        }
+        var quantity = $container.find('.qty').val();
+        add_cart(productId, variationIdColor, variationIdSize, quantity);
+        $(this).hide();
+        $container.find('.qty-box').show();
+    });
+
+    function doneTyping($container, productId) {
+        var quantity = $container.find('.qty').val();
+        if (!isNaN(quantity)) {
+            quantity = parseInt(quantity);
+            $container.find('.qty').value = quantity;
+            add_cart(productId, null, null, quantity); // Pass quantity and productId to add_cart function
+            console.log("product id dont typing "+productId);
+            $('.add-to-cart', $container).trigger('click');
+            addLoader();
+        }
+    }
+
+    function add_cart(productId, variationIdColor, variationIdSize, quantity) {
+        addLoader();
+        console.log("Product ID add_cart"+productId);
+
+        $.ajax({
+            type: 'POST',
+            url: PHP_ENV.WP_AJAX,
+            data: {
+                action: 'get_variation_ajax',
+                product_id: productId,
+                variation_Id_color: variationIdColor,
+                variation_Id_size: variationIdSize,
+            },
+            success: function (response) {
+                var variationid = response.variation_id;
+                var productType = response.product_type;
+                if (variationid == 0 && productType !== 'simple') {
+                    showPopupNotification('This variation is not available. Please select another variation.');
+                    return false;
+                }
+                add_to_cart_ajax_func(variationid, productId, quantity);
+            },
+            error: function (xhr, status, error) {
+
+                // console.error(xhr.responseText);
+                removeLoader();
+                // alert('failed');
+            }
+        });
+    }
+
+    function add_to_cart_ajax_func(variationid, productId, quantity) {
+
+        addLoader();
+        $.ajax({
+            type: 'POST',
+            url: PHP_ENV.WP_AJAX,
+            data: {
+                action: 'add_to_cart_ajax',
+                product_id: productId,
+                variation_Id: variationid,
+                quantity: quantity
+            },
+            success: function (response) {
+                removeLoader();
+                showSuccess('Product has been added successfully');
+                console.log('Product Has been added Quantity:' + quantity);
+
+            },
+            error: function (xhr, status, error) {
+                // Handle error
+                // console.error(xhr.responseText);              
+                removeLoader();
+
+                update_mini_cart(productId, variationid, quantity);
+                // alert('failed to add');
+            }
+        });
+    }
+});

@@ -1,0 +1,235 @@
+<?php
+if (!defined('ABSPATH'))
+    exit; // Exit if accessed directly
+
+/** 
+ * The template for displaying the Home Page Content
+ *  
+ * @package WordPress
+ * @subpackage Euverman & Nuyts
+ * @since Euverman & Nuyts 1.0
+ */
+?>
+
+<div class="container">
+    <div class="features-wrap">
+        <div class="feature">
+            <div class="icon">
+                <i class="icon-genuine"></i>
+            </div>
+            <div class="feature-info">
+                <h6>Guaranteed</h6>
+                <p>Genuine Products</p>
+            </div>
+        </div>
+        <div class="feature">
+            <div class="icon">
+                <i class="icon-support"></i>
+            </div>
+            <div class="feature-info">
+                <h6>24x7 Customer</h6>
+                <p>Support</p>
+            </div>
+        </div>
+        <div class="feature">
+            <div class="icon">
+                <i class="icon-bill"></i>
+            </div>
+            <div class="feature-info">
+                <h6>GST Compliant</h6>
+                <p>billing</p>
+            </div>
+        </div>
+        <div class="feature">
+            <div class="icon">
+                <i class="icon-payment"></i>
+            </div>
+            <div class="feature-info">
+                <h6>100% Secure</h6>
+                <p>payment</p>
+            </div>
+        </div>
+        <div class="feature">
+            <div class="icon">
+                <i class="icon-shipping-truck"></i>
+            </div>
+            <div class="feature-info">
+                <h6>Free Shipping</h6>
+                <p>on orders above Rs.5,000/-</p>
+            </div>
+        </div>
+        <div class="feature">
+            <div class="icon">
+                <i class="icon-return"></i>
+            </div>
+            <div class="feature-info">
+                <h6>Easy Return</h6>
+                <p>policy</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Display all available categories with permalinks -->
+<div class="products-categories">
+    <?php
+    $product_categories = get_terms(
+        array(
+            'taxonomy' => 'product_cat',
+            'hide_empty' => false,
+        )
+    );
+
+    foreach ($product_categories as $category) {
+        $category_link = get_term_link($category);
+        $category_image = '';
+
+        $thumbnail_id = get_term_meta($category->term_id, 'thumbnail_id', true);
+        if (!empty($thumbnail_id)) {
+            $image_src = wp_get_attachment_image_src($thumbnail_id, 'full');
+            if ($image_src) {
+                $category_image = '<figure><img src="' . $image_src[0] . '" alt="' . $category->name . '"></figure>';
+            }
+        }
+        ?>
+        <div class="category">
+            <a href="<?php echo esc_url($category_link); ?>">
+                <?php echo $category_image; ?>
+            </a>
+            <h6><a href="<?php echo esc_url($category_link); ?>">
+                    <?php echo $category->name; ?>
+                </a></h6>
+        </div>
+    <?php } ?>
+</div>
+<div class="products-block">
+    <div class="wrap">
+        <div class="section-title">
+            <h4 class="title-line">Best Selling Products</h4>
+            <div class="products-swiper-btn">
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev swiper-button-disabled"></div>
+            </div>
+        </div>
+        <div
+            class="swiper products-swiper swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden">
+            <div class="swiper-wrapper" style="cursor: grab; transform: translate3d(0px, 0px, 0px);">
+                <?php
+                $args = array(
+                    'post_type' => 'product',
+                    'posts_per_page' => -1,
+                );
+
+                $products = new WP_Query($args);
+
+                if ($products->have_posts()):
+                    while ($products->have_posts()):
+                        $products->the_post();
+                        global $product;
+                        ?>
+                        <div class="swiper-slide swiper-slide-active" style="width: 277.5px; margin-right: 20px;">
+
+                            <div class="product" style="height: auto;">
+                                <a href=" <?php the_permalink(); ?>">
+                                    <figure>
+
+                                        <?php the_post_thumbnail('thumbnail'); ?>
+
+                                    </figure>
+                                </a>
+                                <h6>
+                                    <?php the_title(); ?>
+                                </h6>
+                                <div class="price-row">
+                                    <div class="price-info">
+                                        <del>
+                                            <?php echo $product->get_regular_price(); ?>
+                                        </del>
+                                        <span class="price">
+                                            <?php
+                                            if ($product->is_type('variable')) {
+                                                // Get the variation ID based on selected attributes
+                                                $variation_id = $product->get_id();
+                                                $variation_data_store = WC_Data_Store::load('product-variable');
+                                                $variation_id = $variation_data_store->find_matching_product_variation(
+                                                    $product,
+                                                    array(
+                                                        'attribute_pa_color' => 'pa_color',
+                                                        'attribute_pa_size' => 'pa-size'
+                                                    )
+                                                );
+
+                                                // Get the variation price
+                                                if ($variation_id) {
+                                                    $variation = new WC_Product_Variation($variation_id);
+                                                    echo $variation->get_price_html();
+                                                } else {
+                                                    // If variation not found, display the default product price
+                                                    echo $product->get_price_html();
+                                                }
+                                            } else {
+                                                // For simple products, display the default product price
+                                                echo $product->get_price_html();
+                                            }
+                                            ?>
+                                        </span>
+
+
+                                        <p>(Inclusive of all taxes)</p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group no-swiping">
+                                    <?php
+                                    if ($product->is_type('variable')) {
+                                        $attributes = $product->get_attributes();
+
+                                        if ($attributes) {
+                                            foreach ($attributes as $attribute) {
+                                                $attribute_name = $attribute->get_name();
+                                                $attribute_options = $attribute->get_options();
+                                                echo '<div class="form-group no-swiping">';
+                                                echo '<label for="' . esc_attr($attribute_name) . '">' .'Select '. esc_html($attribute_name) . '</label>';
+                                                echo '<select name="attribute_' . esc_attr($attribute_name) . '_' . $product->get_id() . '" id="' . esc_attr($attribute_name) . '_' . $product->get_id() . '" class="form-control variation-select" data-product-id="' . esc_attr($product->get_id()) . '">';
+                                                // echo '<option value="">' . esc_html__('Select ' . $attribute_name, 'twentytwentyfour') . '</option>';
+                                                $attribute_terms = wc_get_product_terms($product->get_id(), $attribute_name, array('fields' => 'all'));
+                                                foreach ($attribute_terms as $term) {
+                                                    $variation_data_store = WC_Data_Store::load('product-variable');
+                                                    $variation_id = $variation_data_store->find_matching_product_variation(
+                                                        $product,
+                                                        array(
+                                                            'attribute_' . $attribute_name => $term->slug
+                                                        )
+                                                    );
+                                                    echo '<option value="' . esc_attr($variation_id) . '">' . esc_html($term->name) . '</option>';
+                                                }
+                                                echo '</select>';
+                                                echo '</div>';
+                                            }
+                                        }
+                                    }
+                                    ?>
+                                </div>
+
+
+
+                                <div class="btn-group">
+                                    <a href="<?php echo wc_get_cart_url(); ?>" class="button add-to-cart"
+                                        data-product-id="<?php echo $product->get_id(); ?>"
+                                        data-variation-id="<?php echo esc_attr($variation_id); ?>">
+                                        Add to Cart<i class="icon-cart"></i>
+                                    </a>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    <?php endwhile;
+                    wp_reset_postdata();
+                endif;
+                ?>
+            </div>
+
+        </div>
+    </div>
+</div>
+<?php get_footer(); ?>
