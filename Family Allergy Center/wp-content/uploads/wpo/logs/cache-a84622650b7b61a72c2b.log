@@ -1,0 +1,6 @@
+[2025-02-27 04:54:04 : INFO] - Full Cache Purge triggered by: plugin activation/deactivation 
+[2025-02-27 04:58:00 : INFO] - Full Cache Purge triggered by: plugin activation/deactivation 
+[2025-02-27 04:58:27 : INFO] - Full Cache Purge triggered by: plugin activation/deactivation 
+[2025-02-28 07:07:09 : INFO] - Cache for URL: https://webtech-evolution.com/fac/?p=155 has been purged, triggered by action: save_post 
+[2025-02-28 07:07:09 : INFO] - Cache for previous post (with URL: https://webtech-evolution.com/fac/index.php/2025/02/20/hello-world/) adjacent to post with id: 155 has been purged, triggered by action: save_post 
+[2025-02-28 07:07:09 : INFO] - Cache for all archives page associated with post_type: post and Title: "Auto Draft" have been purged, triggered by action: save_post 
